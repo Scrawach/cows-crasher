@@ -8,7 +8,7 @@ namespace CodeBase.Cow.States
 {
     public class CowRunAwayState : State
     {
-        [SerializeField] private float _safetyDistance = 10f;
+        [SerializeField] private Vector2 _safetyDistanceRange = new Vector2(8, 12);
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Transform Body;
         [SerializeField] private Transform EnemyBody;
@@ -17,12 +17,14 @@ namespace CodeBase.Cow.States
         [field: SerializeField] public override Transition[] Transitions { get; protected set; }
 
         private float _directionChangeCooldown = 2f;
+        private float _safetyDistance;
 
         public bool InSafety { get; private set; }
 
         public override void Enter()
         {
             _directionChangeCooldown = _timeBeforeChangeDirection;
+            _safetyDistance = Random.Range(_safetyDistanceRange.x, _safetyDistanceRange.y);
             InSafety = false;
             _agent.enabled = true;
         }
@@ -32,14 +34,28 @@ namespace CodeBase.Cow.States
 
         public void Update()
         {
+            var distanceToEnemy = DistanceToEnemy();
+
+            if (distanceToEnemy.magnitude > _safetyDistance)
+                InSafety = true;
+            
+            UpdateRunAwayDirection(distanceToEnemy);
+        }
+
+        private void UpdateRunAwayDirection(Vector3 distanceToEnemy)
+        {
             UpdateCooldown();
-            
-            if (InSafety || IsCooldownUp())
+            if (IsCooldownUp())
                 return;
-            
             _directionChangeCooldown = 0;
-            
-            RunAwayInSafety();
+            RunAwayInSafety(distanceToEnemy);
+        }
+
+        private Vector3 DistanceToEnemy()
+        {
+            var distanceToEnemy = EnemyBody.position - Body.position;
+            distanceToEnemy.y = 0;
+            return distanceToEnemy;
         }
 
         private void UpdateCooldown() =>
@@ -48,18 +64,11 @@ namespace CodeBase.Cow.States
         private bool IsCooldownUp() =>
             _directionChangeCooldown < _timeBeforeChangeDirection;
 
-        private void RunAwayInSafety()
+        private void RunAwayInSafety(Vector3 distanceToEnemy)
         {
-            var selfPosition = Body.position;
-            var distanceToEnemy = (EnemyBody.position - selfPosition);
-            distanceToEnemy.y = 0;
-
             var runAway = -distanceToEnemy.normalized;
-            var nextPoint = runAway * _safetyDistance + selfPosition;
+            var nextPoint = runAway * _safetyDistance + Body.position;
             _agent.destination = nextPoint;
-
-            if (distanceToEnemy.magnitude > _safetyDistance)
-                InSafety = true;
         }
     }
 }
