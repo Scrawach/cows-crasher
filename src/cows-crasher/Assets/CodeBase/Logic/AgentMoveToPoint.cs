@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,8 +7,6 @@ namespace CodeBase.Logic
     {
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Transform _point;
-
-        private const float MinimalDistance = 2f;
 
         private void Update()
         {
