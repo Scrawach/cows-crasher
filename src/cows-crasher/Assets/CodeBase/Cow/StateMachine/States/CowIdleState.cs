@@ -2,22 +2,26 @@ using CodeBase.Cow.StateMachine.States.Abstract;
 
 namespace CodeBase.Cow.StateMachine.States
 {
-    public class CowNavigationState : IState, IUpdatableState
+    public class CowIdleState : IState, IUpdatableState
     {
         private readonly CowStateMachine _stateMachine;
         private readonly CowBehaviour _cowBehaviour;
 
-        public CowNavigationState(CowStateMachine stateMachine, CowBehaviour cowBehaviour)
+        public CowIdleState(CowStateMachine stateMachine, CowBehaviour cowBehaviour)
         {
             _stateMachine = stateMachine;
             _cowBehaviour = cowBehaviour;
         }
+        
+        public void Enter()
+        {
+            
+        }
 
-        public void Enter() =>
-            _cowBehaviour.Agent.enabled = true;
-
-        public void Exit() =>
-            _cowBehaviour.Agent.enabled = false;
+        public void Exit()
+        {
+            
+        }
 
         public void Update(float delta)
         {

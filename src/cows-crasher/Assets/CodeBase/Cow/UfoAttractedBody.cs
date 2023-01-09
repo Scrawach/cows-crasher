@@ -2,7 +2,7 @@
 
 namespace CodeBase.Cow
 {
-    public class UfoAttractedObject : MonoBehaviour
+    public class UfoAttractedBody : MonoBehaviour
     {
         [SerializeField] 
         private Rigidbody _body;

@@ -12,12 +12,12 @@ namespace CodeBase.Ufo
         private float _speed = 3;
         
         private PlayerInput _input;
-        private List<UfoAttractedObject> _attractedObjects;
+        private List<UfoAttractedBody> _attractedObjects;
 
         private void Awake()
         {
             _input = new PlayerInput(Camera.main);
-            _attractedObjects = new List<UfoAttractedObject>();
+            _attractedObjects = new List<UfoAttractedBody>();
         }
 
         private void Update()
@@ -28,8 +28,8 @@ namespace CodeBase.Ufo
                 DeactivateRay();
         }
 
-        public void Remove(UfoAttractedObject attractedObject) => 
-            _attractedObjects.Remove(attractedObject);
+        public void Remove(UfoAttractedBody attractedBody) => 
+            _attractedObjects.Remove(attractedBody);
 
         private void ActivateRay()
         {
@@ -50,13 +50,13 @@ namespace CodeBase.Ufo
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out UfoAttractedObject attracted)) 
+            if (other.TryGetComponent(out UfoAttractedBody attracted)) 
                 _attractedObjects.Add(attracted);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent(out UfoAttractedObject attracted)
+            if (other.TryGetComponent(out UfoAttractedBody attracted)
                 && _attractedObjects.Contains(attracted))
             {
                 attracted.EndAttract();

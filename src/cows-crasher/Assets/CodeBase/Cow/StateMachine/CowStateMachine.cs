@@ -13,9 +13,11 @@ namespace CodeBase.Cow.StateMachine
         public CowStateMachine(CowBehaviour behaviour) =>
             _states = new Dictionary<Type, IState>
             {
+                [typeof(CowIdleState)] = new CowIdleState(this, behaviour),
                 [typeof(CowNavigationState)] = new CowNavigationState(this, behaviour),
                 [typeof(CowLevitationState)] = new CowLevitationState(this, behaviour),
-                [typeof(CowRaisingState)] = new CowRaisingState(this, behaviour)
+                [typeof(CowRaisingState)] = new CowRaisingState(this, behaviour),
+                [typeof(CowRunAwayState)] = new CowRunAwayState(this, behaviour)
             };
 
         public void Enter<TState>() where TState : IState

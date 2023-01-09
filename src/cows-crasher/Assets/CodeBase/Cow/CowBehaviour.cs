@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Cow.StateMachine;
 using CodeBase.Cow.StateMachine.States;
+using CodeBase.Logic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,9 +11,11 @@ namespace CodeBase.Cow
     {
         public Rigidbody Rigidbody;
         public NavMeshAgent Agent;
+        public AgentMoveToPoint MoveToPoint;
         public NavMeshObstacle Obstacle;
-        public UfoAttractedObject AttractedObject;
+        public UfoAttractedBody attractedBody;
         public LayerMask GroundLayer;
+        public Transform Enemy;
 
         private CowStateMachine _stateMachine;
 

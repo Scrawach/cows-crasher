@@ -41,11 +41,11 @@ namespace CodeBase.Cow.StateMachine.States
             var lerpProgress = _elapsed / RisingTime;
             _cowBehaviour.transform.rotation = Quaternion.Slerp(_startRotation, _desiredRotation, lerpProgress);
             
-            if (_cowBehaviour.AttractedObject.IsAttracting)
+            if (_cowBehaviour.attractedBody.IsAttracting)
                 _stateMachine.Enter<CowLevitationState>();
 
             if (_elapsed >= RisingTime)
-                _stateMachine.Enter<CowNavigationState>();
+                _stateMachine.Enter<CowRunAwayState>();
         }
         
         private Vector3 DesiredPosition()

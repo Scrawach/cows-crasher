@@ -19,7 +19,7 @@ namespace CodeBase.Cow.StateMachine.States
 
         public void Update(float delta)
         {
-            if (!_cowBehaviour.AttractedObject.IsAttracting && _cowBehaviour.IsGrounded) 
+            if (!_cowBehaviour.attractedBody.IsAttracting && _cowBehaviour.IsGrounded) 
                 _stateMachine.Enter<CowRaisingState>();
         }
 

@@ -12,15 +12,15 @@ namespace CodeBase.Ufo
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out UfoAttractedObject attracted)) 
+            if (other.TryGetComponent(out UfoAttractedBody attracted)) 
                 Collect(attracted);
         }
 
-        private void Collect(UfoAttractedObject attractedObject)
+        private void Collect(UfoAttractedBody attractedBody)
         {
             Count++;
-            _ray.Remove(attractedObject);
-            Destroy(attractedObject.gameObject);
+            _ray.Remove(attractedBody);
+            Destroy(attractedBody.gameObject);
         }
     }
 }
