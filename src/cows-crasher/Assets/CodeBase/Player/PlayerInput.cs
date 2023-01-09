@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Ufo
+namespace CodeBase.Player
 {
     public class PlayerInput
     {
@@ -26,6 +26,6 @@ namespace CodeBase.Ufo
         }
 
         public bool IsInteractButtonPressed() => 
-            Input.GetKey(KeyCode.Space);
+            Input.GetKey(KeyCode.Q);
     }
 }

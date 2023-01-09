@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Ufo
+namespace CodeBase.Cow
 {
     public class UfoAttractedObject : MonoBehaviour
     {
         [SerializeField] 
         private Rigidbody _body;
-        
+
+        [field:SerializeField]
         public bool IsAttracting { get; private set; }
         
         public void PullTo(Vector3 point, float withSpeed)
@@ -17,18 +18,11 @@ namespace CodeBase.Ufo
             _body.velocity = movement;
             _body.angularVelocity = movement;
         }
-
-        public void BeginAttract()
-        {
+        
+        public void BeginAttract() =>
             IsAttracting = true;
-            _body.useGravity = false;
-            _body.velocity = Vector3.zero;
-        }
 
-        public void EndAttract()
-        {
+        public void EndAttract() =>
             IsAttracting = false;
-            _body.useGravity = true;
-        }
     }
 }

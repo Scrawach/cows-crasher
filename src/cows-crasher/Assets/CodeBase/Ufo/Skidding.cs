@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CodeBase.Player;
+using UnityEngine;
 
 namespace CodeBase.Ufo
 {

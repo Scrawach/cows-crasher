@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Cow;
+using CodeBase.Player;
 using UnityEngine;
 
 namespace CodeBase.Ufo
@@ -43,6 +45,8 @@ namespace CodeBase.Ufo
             foreach (var attracted in _attractedObjects.Where(a => a.IsAttracting)) 
                 attracted.EndAttract();
         }
+        
+        
 
         private void OnTriggerEnter(Collider other)
         {
