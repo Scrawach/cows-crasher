@@ -492,7 +492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 688bdc139b284e089bac9fd60d943f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseInSeconds: 2
   _idleTimer: {fileID: 1205576030593337368}
   <Transitions>k__BackingField:
   - {fileID: 7245479331533519586}
@@ -510,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: 0
+  Target: 2
 --- !u!1 &7245479330252968156
 GameObject:
   m_ObjectHideFlags: 0

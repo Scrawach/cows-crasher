@@ -2011,11 +2011,6 @@ PrefabInstance:
       propertyPath: Points.Array.data[3]
       value: 
       objectReference: {fileID: 1116574566}
-    - target: {fileID: 1205576030593337368, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: Target
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4621355049599548584, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
         type: 3}
       propertyPath: m_Name

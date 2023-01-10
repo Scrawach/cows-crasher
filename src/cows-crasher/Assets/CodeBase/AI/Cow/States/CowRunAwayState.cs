@@ -8,6 +8,7 @@ namespace CodeBase.AI.Cow.States
     public class CowRunAwayState : State
     {
         [SerializeField] private Vector2 _safetyDistanceRange = new Vector2(8, 12);
+        [SerializeField] private float _runAwaySpeed = 4f;
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Transform Body;
         [SerializeField] private Transform EnemyBody;
@@ -17,6 +18,7 @@ namespace CodeBase.AI.Cow.States
 
         private float _directionChangeCooldown = 2f;
         private float _safetyDistance;
+        private float _previousSpeed;
 
         public bool InSafety { get; private set; }
 
@@ -24,12 +26,17 @@ namespace CodeBase.AI.Cow.States
         {
             _directionChangeCooldown = _timeBeforeChangeDirection;
             _safetyDistance = Random.Range(_safetyDistanceRange.x, _safetyDistanceRange.y);
+            _previousSpeed = _agent.speed;
+            _agent.speed = _runAwaySpeed;
             InSafety = false;
             _agent.enabled = true;
         }
 
-        public override void Exit() =>
+        public override void Exit()
+        {
+            _agent.speed = _previousSpeed;
             _agent.enabled = false;
+        }
 
         public void Update()
         {
