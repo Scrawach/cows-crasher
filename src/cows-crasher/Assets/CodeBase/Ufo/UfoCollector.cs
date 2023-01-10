@@ -1,4 +1,4 @@
-﻿using CodeBase.Cow;
+﻿using CodeBase.AI.Components;
 using UnityEngine;
 
 namespace CodeBase.Ufo

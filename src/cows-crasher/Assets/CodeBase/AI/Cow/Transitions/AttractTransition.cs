@@ -1,4 +1,7 @@
-namespace CodeBase.Cow.Transitions
+using CodeBase.AI.Components;
+using CodeBase.AI.Cow.Transitions.Abstract;
+
+namespace CodeBase.AI.Cow.Transitions
 {
     public class AttractTransition : Transition
     {

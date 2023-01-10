@@ -1,7 +1,7 @@
 using System.Linq;
-using CodeBase.Cow.States.Abstract;
+using CodeBase.AI.Cow.States.Abstract;
 
-namespace CodeBase.Cow
+namespace CodeBase.AI
 {
     public class StateMachine
     {

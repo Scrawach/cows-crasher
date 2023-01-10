@@ -1,6 +1,7 @@
+using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 
-namespace CodeBase.Cow.Transitions
+namespace CodeBase.AI.Cow.Transitions
 {
     public class WarningTransition : Transition
     {

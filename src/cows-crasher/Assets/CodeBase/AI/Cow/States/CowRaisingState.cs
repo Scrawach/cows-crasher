@@ -1,8 +1,8 @@
-using CodeBase.Cow.States.Abstract;
-using CodeBase.Cow.Transitions;
+using CodeBase.AI.Cow.States.Abstract;
+using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 
-namespace CodeBase.Cow.States
+namespace CodeBase.AI.Cow.States
 {
     public class CowRaisingState : State
     {

@@ -1,10 +1,11 @@
-using CodeBase.Cow.States.Abstract;
-using CodeBase.Cow.Transitions;
+using CodeBase.AI.Components;
+using CodeBase.AI.Cow.States.Abstract;
+using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
-namespace CodeBase.Cow.States
+namespace CodeBase.AI.Cow.States
 {
     public class CowPatrolState : State
     {

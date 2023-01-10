@@ -1,7 +1,7 @@
-using CodeBase.Cow.States;
+using CodeBase.AI.Cow.States;
 using UnityEngine;
 
-namespace CodeBase.Cow
+namespace CodeBase.AI.Cow
 {
     public class CowBehaviour : MonoBehaviour
     {
@@ -9,8 +9,11 @@ namespace CodeBase.Cow
 
         private StateMachine _stateMachine;
 
-        private void Awake() =>
+        private void Awake()
+        {
+            IdleState.Enter();
             _stateMachine = new StateMachine(IdleState);
+        }
 
         private void Update() =>
             _stateMachine.Update();

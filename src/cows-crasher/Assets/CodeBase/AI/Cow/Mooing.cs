@@ -1,6 +1,7 @@
+using CodeBase.AI.Components;
 using UnityEngine;
 
-namespace CodeBase.Cow
+namespace CodeBase.AI.Cow
 {
     public class Mooing : MonoBehaviour
     {

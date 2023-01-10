@@ -1,7 +1,7 @@
-using CodeBase.Cow.States;
-using CodeBase.Cow.States.Abstract;
+using CodeBase.AI.Cow.States;
+using CodeBase.AI.Cow.Transitions.Abstract;
 
-namespace CodeBase.Cow.Transitions
+namespace CodeBase.AI.Cow.Transitions
 {
     public class IsRaisedTransition : Transition
     {

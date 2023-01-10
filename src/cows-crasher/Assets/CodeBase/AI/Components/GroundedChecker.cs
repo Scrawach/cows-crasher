@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Cow
+namespace CodeBase.AI.Components
 {
     public class GroundedChecker : MonoBehaviour
     {

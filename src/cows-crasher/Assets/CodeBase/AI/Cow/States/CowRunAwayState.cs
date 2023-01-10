@@ -1,10 +1,9 @@
-using CodeBase.Cow.States.Abstract;
-using CodeBase.Cow.Transitions;
-using CodeBase.Logic;
+using CodeBase.AI.Cow.States.Abstract;
+using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace CodeBase.Cow.States
+namespace CodeBase.AI.Cow.States
 {
     public class CowRunAwayState : State
     {

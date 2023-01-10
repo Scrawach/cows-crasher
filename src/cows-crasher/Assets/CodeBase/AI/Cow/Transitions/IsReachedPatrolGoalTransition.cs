@@ -1,7 +1,8 @@
-using CodeBase.Cow.States;
+using CodeBase.AI.Cow.States;
+using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 
-namespace CodeBase.Cow.Transitions
+namespace CodeBase.AI.Cow.Transitions
 {
     public class IsReachedPatrolGoalTransition : Transition
     {

@@ -1,7 +1,7 @@
-using CodeBase.Cow.States.Abstract;
+using CodeBase.AI.Cow.States.Abstract;
 using UnityEngine;
 
-namespace CodeBase.Cow.Transitions
+namespace CodeBase.AI.Cow.Transitions.Abstract
 {
     public abstract class Transition : MonoBehaviour
     {

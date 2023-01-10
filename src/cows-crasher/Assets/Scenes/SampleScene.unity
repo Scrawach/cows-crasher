@@ -834,28 +834,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &989699327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1430443839967882150, guid: e2e90e4d8cb16d54ab970915938bd906,
-    type: 3}
-  m_PrefabInstance: {fileID: 5634698262338202095}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &989699333
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 989699327}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1007375340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,6 +2011,11 @@ PrefabInstance:
       propertyPath: Points.Array.data[3]
       value: 
       objectReference: {fileID: 1116574566}
+    - target: {fileID: 1205576030593337368, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
+        type: 3}
+      propertyPath: Target
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4621355049599548584, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
         type: 3}
       propertyPath: m_Name
