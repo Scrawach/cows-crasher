@@ -14,7 +14,10 @@ namespace CodeBase.CameraLogic
             if (HasTarget()) 
                 Follow(_target, with: _rotationAngle);
         }
-        
+
+        public void Follow(Transform target) =>
+            _target = target;
+
         private bool HasTarget() =>
             _target != null;
 

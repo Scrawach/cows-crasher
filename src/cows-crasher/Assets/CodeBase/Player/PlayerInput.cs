@@ -12,10 +12,15 @@ namespace CodeBase.Player
         public PlayerInput(Camera camera) => 
             _camera = camera;
 
+        public bool IsBlocked;
+
         public Vector3 Axis
         {
             get
             {
+                if (IsBlocked)
+                    return Vector3.zero;
+
                 var horizontal = Input.GetAxis(HorizontalAxis);
                 var vertical = Input.GetAxis(VerticalAxis);
                 var direction = new Vector2(horizontal, vertical);
@@ -26,6 +31,6 @@ namespace CodeBase.Player
         }
 
         public bool IsInteractButtonPressed() => 
-            Input.GetKey(KeyCode.Q);
+            !IsBlocked && Input.GetKey(KeyCode.Q);
     }
 }
