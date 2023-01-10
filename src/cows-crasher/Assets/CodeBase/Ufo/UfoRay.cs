@@ -8,8 +8,7 @@ namespace CodeBase.Ufo
 {
     public class UfoRay : MonoBehaviour
     {
-        [SerializeField] 
-        private float _speed = 3;
+        [SerializeField] private float _speed = 3;
         
         private PlayerInput _input;
         private List<UfoAttractedBody> _attractedObjects;
