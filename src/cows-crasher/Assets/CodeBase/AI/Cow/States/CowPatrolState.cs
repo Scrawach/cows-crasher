@@ -10,7 +10,7 @@ namespace CodeBase.AI.Cow.States
     public class CowPatrolState : State
     {
         [SerializeField] private NavMeshAgent _agent;
-        [FormerlySerializedAs("_route")] [SerializeField] private PatrolRoute patrolRoute;
+        [SerializeField] private PatrolRoute patrolRoute;
         
         private Vector3 _currentGoal;
         private int _goalIndex;

@@ -1,18 +1,18 @@
-using CodeBase.AI.Cow.States;
+using CodeBase.AI.Cow.States.Abstract;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow
 {
     public class CowBehaviour : MonoBehaviour
     {
-        public CowIdleState IdleState;
+        [SerializeField] public State _initialState;
 
         private StateMachine _stateMachine;
 
         private void Awake()
         {
-            IdleState.Enter();
-            _stateMachine = new StateMachine(IdleState);
+            _stateMachine = new StateMachine();
+            _stateMachine.Enter(_initialState);
         }
 
         private void Update() =>

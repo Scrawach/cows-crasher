@@ -1,34 +1,41 @@
 using System.Linq;
 using CodeBase.AI.Cow.States.Abstract;
-using UnityEngine;
 
 namespace CodeBase.AI
 {
     public class StateMachine
     {
         private State _current;
-
-        public StateMachine(State initial) =>
-            _current = initial;
-
+        
         public void Update()
         {
-            foreach (var transition in _current.Transitions.Where(trans => trans.NeedTransit()))
-            { 
+            var transition = _current.Transitions.FirstOrDefault(trans => trans.NeedTransit());
+            
+            if (transition != null) 
                 Enter(transition.NextState);
-                break;
-            }
         }
 
-        private void Enter(State state)
+        public void Enter(State state) =>
+            _current = SwitchTo(state);
+
+        private State SwitchTo(State state)
         {
-            _current.Exit();
-            _current.gameObject.SetActive(false);
+            if (_current) ExitFrom(_current);
             
-            state.gameObject.SetActive(true);
+            EnterTo(state);
+            return state;
+        }
+
+        private static void ExitFrom(State state)
+        {
+            state.Exit();
+            state.gameObject.SetActive(false);
+        }
+
+        private static void EnterTo(State state)
+        {
             state.Enter();
-            
-            _current = state;
+            state.gameObject.SetActive(true);
         }
     }
 }

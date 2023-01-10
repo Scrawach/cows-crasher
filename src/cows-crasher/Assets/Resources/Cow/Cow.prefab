@@ -295,7 +295,6 @@ MonoBehaviour:
   _transitions:
   - {fileID: 1587132684521961978}
   - {fileID: 1083816676}
-  _result: 0
 --- !u!1 &3245210624257506505
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5517486628091092325}
   - component: {fileID: 4648796173848613009}
-  - component: {fileID: 6112626312237786102}
   m_Layer: 0
   m_Name: ToPatrolState WhenHasRoute
   m_TagString: Untagged
@@ -343,23 +341,6 @@ MonoBehaviour:
   NextState: {fileID: 7245479332127113834}
   _patrolRoute: {fileID: 1914546789}
   _pause: {fileID: 1205576030593337368}
---- !u!114 &6112626312237786102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3245210624257506505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9411aeb3d78a4ba39fd7a04f55e45fbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &4085958095626686060
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +391,7 @@ MonoBehaviour:
   _speed: 5
   _findSafetyPlace: {fileID: 9096148164375035055}
   _agent: {fileID: 4621355049599548579}
+  _mooing: {fileID: 2643407366511896137}
 --- !u!1 &4621355049599548584
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +409,7 @@ GameObject:
   - component: {fileID: 4621355049599548582}
   - component: {fileID: 2643407366511896137}
   - component: {fileID: 9096148164375035055}
+  - component: {fileID: 1092242742961488136}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Untagged
@@ -574,6 +557,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nearbySafetyPlace: {fileID: 0}
   _radius: 10
+--- !u!114 &1092242742961488136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621355049599548584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63ff40e937748ca8efec56dc603ea7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Enemy>k__BackingField: {fileID: 0}
 --- !u!1 &4621355049680850524
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df288d84b9d4b989d7c362044ca11b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IdleState: {fileID: 7245479330202246554}
+  _initialState: {fileID: 7245479330202246554}
 --- !u!1 &7245479330520130926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,9 +1174,10 @@ MonoBehaviour:
   _safetyDistanceRange: {x: 8, y: 12}
   _runAwaySpeed: 4
   _agent: {fileID: 4621355049599548579}
-  Body: {fileID: 4621355049599548591}
-  EnemyBody: {fileID: 0}
+  _body: {fileID: 4621355049599548591}
+  _enemyFeeling: {fileID: 1092242742961488136}
   _timeBeforeChangeDirection: 2
+  _mooing: {fileID: 2643407366511896137}
 --- !u!1 &7245479332127113836
 GameObject:
   m_ObjectHideFlags: 0

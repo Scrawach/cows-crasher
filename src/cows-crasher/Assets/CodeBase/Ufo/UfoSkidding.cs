@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CodeBase.Ufo
 {
-    public class Skidding : MonoBehaviour
+    public class UfoSkidding : MonoBehaviour
     {
         [SerializeField] 
         private Transform _body;

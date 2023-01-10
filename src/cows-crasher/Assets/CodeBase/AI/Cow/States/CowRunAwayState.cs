@@ -1,5 +1,5 @@
+using CodeBase.AI.Components;
 using CodeBase.AI.Cow.States.Abstract;
-using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,8 +10,8 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private Vector2 _safetyDistanceRange = new Vector2(8, 12);
         [SerializeField] private float _runAwaySpeed = 4f;
         [SerializeField] private NavMeshAgent _agent;
-        [SerializeField] private Transform Body;
-        [SerializeField] private Transform EnemyBody;
+        [SerializeField] private Transform _body;
+        [SerializeField] private EnemyFeeling _enemyFeeling;
         [SerializeField] private float _timeBeforeChangeDirection = 2f;
         [SerializeField] private Mooing _mooing;
         
@@ -59,7 +59,7 @@ namespace CodeBase.AI.Cow.States
 
         private Vector3 DistanceToEnemy()
         {
-            var distanceToEnemy = EnemyBody.position - Body.position;
+            var distanceToEnemy = _enemyFeeling.Enemy.position - _body.position;
             distanceToEnemy.y = 0;
             return distanceToEnemy;
         }
@@ -73,7 +73,7 @@ namespace CodeBase.AI.Cow.States
         private void RunAwayInSafety(Vector3 distanceToEnemy)
         {
             var runAway = -distanceToEnemy.normalized;
-            var nextPoint = runAway * _safetyDistance + Body.position;
+            var nextPoint = runAway * _safetyDistance + _body.position;
             _agent.destination = nextPoint;
         }
     }

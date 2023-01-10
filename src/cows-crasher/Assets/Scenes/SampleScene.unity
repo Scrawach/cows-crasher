@@ -257,18 +257,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 61198578}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &160022693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2643407366511896137, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7245479331504397039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4012df18caeb49ddbb90b92a80dd30c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &171491453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,6 +323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SafetyHouse (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034474177521367740, guid: 344665d6147b2769eb7f91b2038f377d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344665d6147b2769eb7f91b2038f377d, type: 3}
@@ -404,6 +397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SafetyHouse (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034474177521367740, guid: 344665d6147b2769eb7f91b2038f377d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344665d6147b2769eb7f91b2038f377d, type: 3}
@@ -1368,25 +1366,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1845203808 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5634698261632652283, guid: e2e90e4d8cb16d54ab970915938bd906,
-    type: 3}
-  m_PrefabInstance: {fileID: 5634698262338202095}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1845203810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845203808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d3575996bf4af8a02202c07ead9d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 5
 --- !u!4 &1845203811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5634698261632652282, guid: e2e90e4d8cb16d54ab970915938bd906,
@@ -1908,6 +1887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SafetyHouse
       objectReference: {fileID: 0}
+    - target: {fileID: 1034474177521367740, guid: 344665d6147b2769eb7f91b2038f377d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344665d6147b2769eb7f91b2038f377d, type: 3}
 --- !u!1001 &5634698262338202095
@@ -1917,11 +1901,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5634698261632652281, guid: e2e90e4d8cb16d54ab970915938bd906,
-        type: 3}
-      propertyPath: _mover
-      value: 
-      objectReference: {fileID: 1845203810}
     - target: {fileID: 5634698261632652282, guid: e2e90e4d8cb16d54ab970915938bd906,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1982,11 +1961,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ufo
       objectReference: {fileID: 0}
-    - target: {fileID: 5634698261632652283, guid: e2e90e4d8cb16d54ab970915938bd906,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e90e4d8cb16d54ab970915938bd906, type: 3}
 --- !u!1001 &7245479331504397039
@@ -2012,16 +1986,11 @@ PrefabInstance:
       propertyPath: Points.Array.data[3]
       value: 
       objectReference: {fileID: 1116574566}
-    - target: {fileID: 4387983195674841129, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
+    - target: {fileID: 1092242742961488136, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
         type: 3}
-      propertyPath: _mooing
+      propertyPath: <Enemy>k__BackingField
       value: 
-      objectReference: {fileID: 160022693}
-    - target: {fileID: 4621355049599548579, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: avoidancePriority
-      value: 50
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1845203811}
     - target: {fileID: 4621355049599548584, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
         type: 3}
       propertyPath: m_Name
@@ -2082,36 +2051,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6112626312237786102, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: Points.Array.data[0]
-      value: 
-      objectReference: {fileID: 581967403}
-    - target: {fileID: 6112626312237786102, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: Points.Array.data[1]
-      value: 
-      objectReference: {fileID: 2069463912}
-    - target: {fileID: 6112626312237786102, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: Points.Array.data[2]
-      value: 
-      objectReference: {fileID: 540154712}
-    - target: {fileID: 6112626312237786102, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: Points.Array.data[3]
-      value: 
-      objectReference: {fileID: 1116574566}
-    - target: {fileID: 7245479332012905832, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: EnemyBody
-      value: 
-      objectReference: {fileID: 1845203811}
-    - target: {fileID: 7245479332012905832, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
-        type: 3}
-      propertyPath: _mooing
-      value: 
-      objectReference: {fileID: 160022693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc4bb6dda1a78bf40be189f99cc69b6d, type: 3}
 --- !u!1001 &8129794013405530952

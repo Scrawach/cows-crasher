@@ -46,8 +46,6 @@ namespace CodeBase.Ufo
                 attracted.EndAttract();
         }
         
-        
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out UfoAttractedBody attracted)) 
