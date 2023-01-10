@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CodeBase.Logic;
+using UnityEngine;
 
 namespace CodeBase.CameraLogic
 {
@@ -8,6 +9,7 @@ namespace CodeBase.CameraLogic
         [SerializeField] private Vector3 _rotationAngle;
         [SerializeField] private float _distance;
         [SerializeField] private float _smoothSpeed;
+        [SerializeField] private LevelBorder _levelBorder;
 
         private void LateUpdate()
         {
@@ -27,8 +29,17 @@ namespace CodeBase.CameraLogic
             var desiredPosition = DistanceWithRotate(desiredRotation) + target.position;
             var selfTransform = transform;
             
+            desiredPosition = ClampInBorders(desiredPosition, _levelBorder.Rect);
+
             selfTransform.rotation = desiredRotation;
             selfTransform.position += SmoothPositionStep(desiredPosition, _smoothSpeed);
+        }
+
+        private static Vector3 ClampInBorders(Vector3 position, Rect borders)
+        {
+            position.x = Mathf.Clamp(position.x, borders.xMin, borders.xMax);
+            position.z = Mathf.Clamp(position.z, borders.yMin, borders.yMax);
+            return position;
         }
 
         private Vector3 DistanceWithRotate(Quaternion desiredRotation) =>

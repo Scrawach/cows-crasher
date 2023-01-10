@@ -9,6 +9,7 @@ namespace CodeBase.Ufo
     public class UfoRay : MonoBehaviour
     {
         [SerializeField] private float _speed = 3;
+        [SerializeField] private MeshRenderer _rayRenderer;
         
         private PlayerInput _input;
         private List<UfoAttractedBody> _attractedObjects;
@@ -32,6 +33,7 @@ namespace CodeBase.Ufo
 
         private void ActivateRay()
         {
+            _rayRenderer.enabled = true;
             foreach (var attracted in _attractedObjects)
             {
                 attracted.BeginAttract();
@@ -41,6 +43,7 @@ namespace CodeBase.Ufo
 
         private void DeactivateRay()
         {
+            _rayRenderer.enabled = false;
             foreach (var attracted in _attractedObjects.Where(a => a.IsAttracting)) 
                 attracted.EndAttract();
         }
