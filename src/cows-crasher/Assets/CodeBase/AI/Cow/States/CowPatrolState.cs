@@ -12,8 +12,6 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private NavMeshAgent _agent;
         [FormerlySerializedAs("_route")] [SerializeField] private PatrolRoute patrolRoute;
         
-        [field: SerializeField] public override Transition[] Transitions { get; protected set; }
-
         private Vector3 _currentGoal;
         private int _goalIndex;
         

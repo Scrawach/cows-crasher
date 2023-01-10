@@ -24,11 +24,17 @@ namespace CodeBase.AI.Cow
             }
         }
 
-        public void Listen() =>
+        public void Listen()
+        {
             Heard = true;
+            _elapsed = 0;
+        }
 
-        public void Forget() =>
+        public void Forget()
+        {
             Heard = false;
+            _elapsed = 0;
+        }
 
         private void Moo()
         {

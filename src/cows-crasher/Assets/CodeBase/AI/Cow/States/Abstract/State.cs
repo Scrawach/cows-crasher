@@ -5,7 +5,7 @@ namespace CodeBase.AI.Cow.States.Abstract
 {
     public abstract class State : MonoBehaviour
     {
-        public abstract Transition[] Transitions { get; protected set; }
+        [field: SerializeField] public Transition[] Transitions { get; protected set; }
         public abstract void Enter();
         public abstract void Exit();
     }

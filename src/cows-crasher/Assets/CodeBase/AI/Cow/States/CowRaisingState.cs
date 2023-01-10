@@ -8,7 +8,6 @@ namespace CodeBase.AI.Cow.States
     {
         [SerializeField] private Transform Body;
         [SerializeField] private float _risingTime = 0.5f;
-        [field: SerializeField] public override Transition[] Transitions { get; protected set; }
 
         private Quaternion _startRotation;
         private Quaternion _desiredRotation;

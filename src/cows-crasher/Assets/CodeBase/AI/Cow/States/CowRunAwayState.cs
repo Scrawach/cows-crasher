@@ -14,8 +14,6 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private Transform EnemyBody;
         [SerializeField] private float _timeBeforeChangeDirection = 2f;
         
-        [field: SerializeField] public override Transition[] Transitions { get; protected set; }
-
         private float _directionChangeCooldown = 2f;
         private float _safetyDistance;
         private float _previousSpeed;

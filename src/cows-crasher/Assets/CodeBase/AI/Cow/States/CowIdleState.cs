@@ -9,8 +9,6 @@ namespace CodeBase.AI.Cow.States
     {
         [SerializeField] private Timer _idleTimer;
         
-        [field: SerializeField] public override Transition[] Transitions { get; protected set; }
-        
         public override void Enter() =>
             _idleTimer.Play();
 
