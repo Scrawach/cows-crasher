@@ -13,6 +13,7 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private Transform Body;
         [SerializeField] private Transform EnemyBody;
         [SerializeField] private float _timeBeforeChangeDirection = 2f;
+        [SerializeField] private Mooing _mooing;
         
         private float _directionChangeCooldown = 2f;
         private float _safetyDistance;
@@ -34,6 +35,7 @@ namespace CodeBase.AI.Cow.States
         {
             _agent.speed = _previousSpeed;
             _agent.enabled = false;
+            _mooing.Forget();
         }
 
         public void Update()

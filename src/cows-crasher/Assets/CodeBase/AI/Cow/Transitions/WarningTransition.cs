@@ -7,14 +7,7 @@ namespace CodeBase.AI.Cow.Transitions
     {
         [SerializeField] private Mooing _mooing;
         
-        public override bool NeedTransit()
-        {
-            var memory = _mooing.Heard;
-            
-            if (memory)
-                _mooing.Forget();
-            
-            return memory;
-        }
+        public override bool NeedTransit() =>
+            _mooing.Heard;
     }
 }

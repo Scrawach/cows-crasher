@@ -10,6 +10,7 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private float _speed = 5f;
         [SerializeField] private FindSafetyPlace _findSafetyPlace;
         [SerializeField] private NavMeshAgent _agent;
+        [SerializeField] private Mooing _mooing;
 
         private SafetyPlace _safetyPlace;
         private float _previousSpeed;
@@ -29,6 +30,7 @@ namespace CodeBase.AI.Cow.States
             _agent.speed = _previousSpeed;
             _agent.enabled = false;
             _safetyPlace.FreeSeat();
+            _mooing.Forget();
         }
     }
 }

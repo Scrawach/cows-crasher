@@ -138,6 +138,51 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &710443787411291787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3621114769286155867}
+  - component: {fileID: 1587132684521961978}
+  m_Layer: 0
+  m_Name: HasSafetySpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3621114769286155867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710443787411291787}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4645551423618512426}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1587132684521961978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710443787411291787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef14c6677384015b44d24cf48e45ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextState: {fileID: 4387983195674841129}
+  _findSafetyPlace: {fileID: 9096148164375035055}
 --- !u!1 &1103468710174713905
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +233,7 @@ MonoBehaviour:
   _timer: {fileID: 4670905139277422496}
   _body: {fileID: 4621355049599548591}
   _safetyPlace: {fileID: 9096148164375035055}
+  _collider: {fileID: 4621355049599548580}
 --- !u!114 &4670905139277422496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +257,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4645551423618512426}
   - component: {fileID: 5923724560167231112}
-  - component: {fileID: 2575686789573329483}
   m_Layer: 0
   m_Name: ToRunInSafetyPlace WhenHasPlace AndListenMooing
   m_TagString: Untagged
@@ -229,7 +274,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3621114769286155867}
   m_Father: {fileID: 7245479330533682958}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -247,23 +293,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextState: {fileID: 4387983195674841129}
   _transitions:
-  - {fileID: 2575686789573329483}
+  - {fileID: 1587132684521961978}
   - {fileID: 1083816676}
---- !u!114 &2575686789573329483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2500067795589081853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aef14c6677384015b44d24cf48e45ba5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextState: {fileID: 4387983195674841129}
-  _findSafetyPlace: {fileID: 9096148164375035055}
-  _radius: 10
+  _result: 0
 --- !u!1 &3245210624257506505
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +494,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 1000
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -541,6 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nearbySafetyPlace: {fileID: 0}
+  _radius: 10
 --- !u!1 &4621355049680850524
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +670,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextState: {fileID: 4387983195674841129}
   _findSafetyPlace: {fileID: 9096148164375035055}
-  _radius: 10
 --- !u!1 &7245479330134237262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1228,8 @@ MonoBehaviour:
   <Transitions>k__BackingField:
   - {fileID: 7245479331533519586}
   - {fileID: 1859717212}
+  - {fileID: 5923724560167231112}
+  - {fileID: 1083816676}
   _agent: {fileID: 4621355049599548579}
   patrolRoute: {fileID: 1914546789}
 --- !u!1 &7424120819754245045
