@@ -1,5 +1,4 @@
-﻿using CodeBase.Player;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CodeBase.Ufo
 {
@@ -9,22 +8,9 @@ namespace CodeBase.Ufo
         [SerializeField] private MeshRenderer _rayRenderer;
         [SerializeField] private ParticleSystem _antigravityVfx;
         
-        private PlayerInput _input;
-        
         public bool IsActivated { get; private set; }
 
-        private void Awake() =>
-            _input = new PlayerInput(Camera.main);
-
-        private void Update()
-        {
-            if (_input.IsInteractButtonPressed() && !IsActivated)
-                ActivateRay();
-            else if (_input.IsInteractButtonPressed() && IsActivated)
-                DeactivateRay();
-        }
-
-        private void ActivateRay()
+        public void ActivateRay()
         {
             _rayRenderer.enabled = true;
             _antigravity.Activate();
@@ -32,7 +18,7 @@ namespace CodeBase.Ufo
             IsActivated = true;
         }
 
-        private void DeactivateRay()
+        public void DeactivateRay()
         {
             _rayRenderer.enabled = false;
             _antigravity.Deactivate();

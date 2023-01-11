@@ -24,5 +24,8 @@ namespace CodeBase.AI.Components
 
         public void EndAttract() =>
             IsAttracting = false;
+
+        public void Collect() =>
+            Destroy(gameObject);
     }
 }

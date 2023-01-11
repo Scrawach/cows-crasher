@@ -5205,6 +5205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _antigravity: {fileID: 2749642620412406308}
+  _ray: {fileID: 3102270530450663459}
   Count: 0
 --- !u!1 &5634698261632652283
 GameObject:
@@ -5216,6 +5217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5634698261632652282}
   - component: {fileID: 5634698261632652281}
+  - component: {fileID: 221252979519370292}
   - component: {fileID: 5634698261632652280}
   - component: {fileID: 1845203810}
   - component: {fileID: 3102270530450663459}
@@ -5254,6 +5256,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mover: {fileID: 1845203810}
+--- !u!114 &221252979519370292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634698261632652283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0f14af880c4910be759b412aa3d839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ray: {fileID: 3102270530450663459}
 --- !u!114 &5634698261632652280
 MonoBehaviour:
   m_ObjectHideFlags: 0

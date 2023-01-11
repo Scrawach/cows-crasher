@@ -6,6 +6,7 @@ namespace CodeBase.Ufo
     public class UfoCollector : MonoBehaviour
     {
         [SerializeField] private AntigravityZone _antigravity;
+        [SerializeField] private UfoRay _ray;
         
         public int Count;
         
@@ -19,7 +20,8 @@ namespace CodeBase.Ufo
         {
             Count++;
             _antigravity.Remove(attractedBody);
-            Destroy(attractedBody.gameObject);
+            _ray.DeactivateRay();
+            attractedBody.Collect();
         }
     }
 }

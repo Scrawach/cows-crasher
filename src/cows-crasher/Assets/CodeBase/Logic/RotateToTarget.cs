@@ -8,8 +8,8 @@ namespace CodeBase.Logic
         [SerializeField] private float _rotationSpeed;
 
         private Transform _target;
-        
-        public float AngleToTarget { get; private set; }
+
+        public float AngleToTarget => Quaternion.Angle(transform.rotation, TargetRotation(PositionToLookAt()));
         
         private void OnEnable()
         {
@@ -25,11 +25,8 @@ namespace CodeBase.Logic
 
         private void Update()
         {
-            if (_target != null)
-            {
+            if (_target != null) 
                 transform.rotation = SmoothedRotation(transform.rotation, PositionToLookAt());
-                AngleToTarget = Quaternion.Angle(transform.rotation, TargetRotation(PositionToLookAt()));
-            }
         }
         
         private Vector3 PositionToLookAt()
