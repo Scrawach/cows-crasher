@@ -1,29 +1,21 @@
-﻿using CodeBase.Player;
+﻿using CodeBase.Logic;
+using CodeBase.Player;
 using UnityEngine;
 
 namespace CodeBase.Ufo
 {
     public class UfoSkidding : MonoBehaviour
     {
-        [SerializeField] 
-        private Transform _body;
-
-        [SerializeField] 
-        private float _angleDegrees = 30f;
-
-        [SerializeField] 
-        private float _speed = 3f;
+        [SerializeField] private Transform _body;
+        [SerializeField] private KinematicMover _mover;
+        [SerializeField] private float _angleDegrees = 30f;
+        [SerializeField] private float _speed = 3f;
         
-        private PlayerInput _input;
-
         private Vector3 _currentEulerAngles;
         
-        private void Awake() => 
-            _input = new PlayerInput(Camera.main);
-
         private void Update()
         {
-            _currentEulerAngles += EulerAnglesStep(_currentEulerAngles, _input.Axis, _angleDegrees, _speed);
+            _currentEulerAngles += EulerAnglesStep(_currentEulerAngles, _mover.Direction, _angleDegrees, _speed);
             _body.localEulerAngles = _currentEulerAngles;
         }
 
