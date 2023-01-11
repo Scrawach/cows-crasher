@@ -1,7 +1,7 @@
-using CodeBase.Ufo;
+using CodeBase.Logic;
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Ufo
 {
     public class ThrowAwayCowWhenTackled : MonoBehaviour
     {
