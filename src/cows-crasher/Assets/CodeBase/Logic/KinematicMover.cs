@@ -1,16 +1,18 @@
+using System;
+using CodeBase.AI.Components;
 using UnityEngine;
 
 namespace CodeBase.Logic
 {
     public class KinematicMover : Mover
     {
+        [SerializeField] private Timer _tackleProcess;
         private Vector3 _tackleMovement;
-        [SerializeField] private float _tackleDuration = 0.2f;
-        
-        private float _tackleElapsed;
         private bool _hasTackle;
         
         public Vector3 Direction { get; private set; }
+
+        public event Action Tackled; 
 
         private void Update()
         {
@@ -27,13 +29,8 @@ namespace CodeBase.Logic
         private void ProcessTackle()
         {
             Direction += _tackleMovement;
-            _tackleElapsed += Time.deltaTime;
-            
-            if (_tackleElapsed >= _tackleDuration)
-            {
+            if (_tackleProcess.IsDone) 
                 _hasTackle = false;
-                _tackleElapsed = 0;
-            }
         }
 
         public void Tackle(Vector3 direction, float strength)
@@ -41,6 +38,8 @@ namespace CodeBase.Logic
             _tackleMovement = direction * strength;
             _tackleMovement.y = 0;
             _hasTackle = true;
+            _tackleProcess.Play();
+            Tackled?.Invoke();
         }
     }
 }

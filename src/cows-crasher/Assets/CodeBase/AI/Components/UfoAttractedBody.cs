@@ -4,11 +4,8 @@ namespace CodeBase.AI.Components
 {
     public class UfoAttractedBody : MonoBehaviour
     {
-        [SerializeField] 
-        private Rigidbody _body;
-
-        [field:SerializeField]
-        public bool IsAttracting { get; private set; }
+        [SerializeField] private Rigidbody _body;
+        [field:SerializeField] public bool IsAttracting { get; private set; }
         
         public void PullTo(Vector3 point, float withSpeed)
         {
@@ -26,6 +23,12 @@ namespace CodeBase.AI.Components
             IsAttracting = false;
 
         public void Collect() =>
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+
+        public void Uncollect()
+        {
+            gameObject.SetActive(true);
+            transform.position += Vector3.down;
+        }
     }
 }
