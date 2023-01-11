@@ -17,7 +17,9 @@ namespace CodeBase.Logic.Projectiles
         public override void Construct(Vector3 target)
         {
             _target = target;
-            _direction = (target - transform.position).normalized;
+            _direction = target - transform.position;
+            _direction.y = 0;
+            _direction.Normalize();
             _startHeight = transform.position.y;
         }
 

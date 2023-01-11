@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1fabcda8c56427384e285c15dd74b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 15
+  _speed: 16
   _height:
     serializedVersion: 2
     m_Curve:
@@ -204,8 +204,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _heightChangeTime: 0.8
-  _heightOffset: 1
+  _heightChangeTime: 0.65
+  _heightOffset: 1.2
 --- !u!114 &1728627383628575434
 MonoBehaviour:
   m_ObjectHideFlags: 0

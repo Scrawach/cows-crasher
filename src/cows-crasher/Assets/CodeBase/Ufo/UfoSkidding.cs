@@ -12,10 +12,14 @@ namespace CodeBase.Ufo
         [SerializeField] private float _speed = 3f;
         
         private Vector3 _currentEulerAngles;
-        
+        private PlayerInput _input;
+
+        private void Awake() =>
+            _input = new PlayerInput(Camera.main);
+
         private void Update()
         {
-            _currentEulerAngles += EulerAnglesStep(_currentEulerAngles, _mover.Direction, _angleDegrees, _speed);
+            _currentEulerAngles += EulerAnglesStep(_currentEulerAngles, _input.Axis, _angleDegrees, _speed);
             _body.localEulerAngles = _currentEulerAngles;
         }
 
