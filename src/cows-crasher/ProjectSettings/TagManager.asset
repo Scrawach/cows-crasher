@@ -35,8 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Ufo
+  - UfoObserver
   m_SortingLayers:
   - name: Default
     uniqueID: 0
