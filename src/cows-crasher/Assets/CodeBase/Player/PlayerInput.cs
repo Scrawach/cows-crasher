@@ -31,6 +31,6 @@ namespace CodeBase.Player
         }
 
         public bool IsInteractButtonPressed() => 
-            !IsBlocked && Input.GetKey(KeyCode.Q);
+            !IsBlocked && Input.GetKeyDown(KeyCode.Q);
     }
 }
