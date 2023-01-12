@@ -5215,11 +5215,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5634698261632652282}
+  - component: {fileID: 2782954048090257526}
   - component: {fileID: 5634698261632652281}
   - component: {fileID: 221252979519370292}
   - component: {fileID: 5634698261632652280}
   - component: {fileID: 1845203810}
   - component: {fileID: 3102270530450663459}
+  - component: {fileID: 1193610356}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Untagged
@@ -5243,6 +5245,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2782954048090257526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634698261632652283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4e3110194c49108d8fada90c4ea790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsBlocked: 0
 --- !u!114 &5634698261632652281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5255,7 +5270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49f083da50f54746a0df7ef228fee6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: {fileID: 2782954048090257526}
   _mover: {fileID: 1845203810}
+  _skidding: {fileID: 5634698261632652280}
 --- !u!114 &221252979519370292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5268,6 +5285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0f14af880c4910be759b412aa3d839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: {fileID: 2782954048090257526}
   _ray: {fileID: 3102270530450663459}
 --- !u!114 &5634698261632652280
 MonoBehaviour:
@@ -5282,7 +5300,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _body: {fileID: 5634698263361514185}
-  _mover: {fileID: 1845203810}
   _angleDegrees: 30
   _speed: 3
 --- !u!114 &1845203810
@@ -5297,7 +5314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d3575996bf4af8a02202c07ead9d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 6
+  _speed: 7
   _tackleProcess: {fileID: 3947900214870217722}
 --- !u!114 &3102270530450663459
 MonoBehaviour:
@@ -5314,6 +5331,20 @@ MonoBehaviour:
   _antigravity: {fileID: 2749642620412406308}
   _rayRenderer: {fileID: 2960482229060703216}
   _antigravityVfx: {fileID: 7121513040603125924}
+--- !u!114 &1193610356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634698261632652283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916a460ce9a14c93b66deaec6a30f942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mover: {fileID: 1845203810}
+  _collector: {fileID: 5634698261528902330}
 --- !u!1 &5634698263207845577
 GameObject:
   m_ObjectHideFlags: 0
