@@ -6,16 +6,13 @@ namespace CodeBase.Ufo
 {
     public class UfoSkidding : MonoBehaviour
     {
+        [SerializeField] private PlayerInput _input;
         [SerializeField] private Transform _body;
         [SerializeField] private KinematicMover _mover;
         [SerializeField] private float _angleDegrees = 30f;
         [SerializeField] private float _speed = 3f;
         
         private Vector3 _currentEulerAngles;
-        private PlayerInput _input;
-
-        private void Awake() =>
-            _input = new PlayerInput(Camera.main);
 
         private void Update()
         {

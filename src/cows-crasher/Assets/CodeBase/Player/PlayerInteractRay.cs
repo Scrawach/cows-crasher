@@ -1,16 +1,12 @@
-using CodeBase.Player;
+using CodeBase.Ufo;
 using UnityEngine;
 
-namespace CodeBase.Ufo
+namespace CodeBase.Player
 {
     public class PlayerInteractRay : MonoBehaviour
     {
+        [SerializeField] private PlayerInput _input;
         [SerializeField] private UfoRay _ray;
-
-        private PlayerInput _input;
-
-        private void Awake() =>
-            _input = new PlayerInput(Camera.main);
 
         private void Update()
         {

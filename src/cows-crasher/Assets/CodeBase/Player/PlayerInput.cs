@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CodeBase.Player
 {
-    public class PlayerInput
+    public class PlayerInput : MonoBehaviour
     {
         private const string HorizontalAxis = "Horizontal";
         private const string VerticalAxis = "Vertical";
 
-        private readonly Camera _camera;
+        private Camera _camera;
 
-        public PlayerInput(Camera camera) => 
-            _camera = camera;
+        private void Awake() =>
+            _camera = Camera.main;
 
         public bool IsBlocked;
 
