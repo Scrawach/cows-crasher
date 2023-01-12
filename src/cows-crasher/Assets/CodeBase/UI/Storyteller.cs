@@ -1,45 +1,36 @@
-using TMPro;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CodeBase.UI
 {
     public class Storyteller : MonoBehaviour
     {
-        public TextAsset Story;
-        public bool IsRussian;
-
-        public GameObject StoryPanel;
-        public Button NextButton;
-        public TextMeshProUGUI Description;
+        [SerializeField] private TextAsset _storyText;
+        [SerializeField] public StoryPanel _storyPanel;
 
         private StorySequence _storySequence;
+        private Action _onEnded;
 
-        private void Awake()
+        private void Awake() =>
+            _storySequence = StorySequence.FromAsset(_storyText);
+        
+        public void Show(Action onEnded = null)
         {
-            _storySequence = StorySequence.FromAsset(Story);
-            Show();
-        }
-
-        private void OnEnable() =>
-            NextButton.onClick.AddListener(ShowStoryItem);
-
-        private void OnDisable() =>
-            NextButton.onClick.RemoveListener(ShowStoryItem);
-
-        public void Show() =>
+            _onEnded = onEnded;
             ShowStoryItem();
+        }
 
         private void ShowStoryItem()
         {
             if (_storySequence.HasNextItem())
             {
                 var story = _storySequence.Next();
-                Description.text = IsRussian ? story.Russian : story.English;
+                _storyPanel.Show(story.Russian, ShowStoryItem);
             }
             else
             {
-                StoryPanel.gameObject.SetActive(false);
+                _onEnded?.Invoke();
+                _storyPanel.Hide();
             }
         }
     }
