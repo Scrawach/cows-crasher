@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CodeBase.Logic
@@ -6,9 +7,11 @@ namespace CodeBase.Logic
     {
         [SerializeField] private Catapult _catapult;
         [SerializeField] private RotateToTarget _rotateToTarget;
+        [SerializeField] private Collider _observerCollider;
 
         public void Activate()
         {
+            _observerCollider.enabled = true;
             _catapult.enabled = true;
             _rotateToTarget.enabled = true;
         }
@@ -17,6 +20,7 @@ namespace CodeBase.Logic
         {
             _catapult.enabled = false;
             _rotateToTarget.enabled = false;
+            _observerCollider.enabled = false;
         }
     }
 }
