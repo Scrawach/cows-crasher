@@ -1548,6 +1548,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cow
       objectReference: {fileID: 0}
+    - target: {fileID: 4013483709434406274, guid: d7550013c8ac8cb4c898c1564bd9c8f9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 112abe509810a6f418eacca3cdc2e68b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7550013c8ac8cb4c898c1564bd9c8f9, type: 3}
 --- !u!4 &5163623897937490397 stripped
