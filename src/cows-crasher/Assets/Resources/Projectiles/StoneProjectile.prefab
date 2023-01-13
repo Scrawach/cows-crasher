@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1728627383628575432}
   - component: {fileID: 1728627383628575434}
   m_Layer: 0
-  m_Name: PseudoBallistic
+  m_Name: StoneProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _observer: {fileID: 2199165814021968717}
   _strength: 1
+  _deadVfx: {fileID: 482801435431571935, guid: c1f0d857c01884a418a1d5cd1b2e2d7a, type: 3}
 --- !u!114 &1803186924037893652
 MonoBehaviour:
   m_ObjectHideFlags: 0
