@@ -10,13 +10,9 @@
 		Pass
 		{	
 			Name "Outline"
-			Cull Off
+			Cull Front
 
-			Stencil 
-			{
-			    Ref 1
-			    Comp Greater
-			}
+
 
 		    CGPROGRAM
 		    #pragma vertex vert
@@ -36,7 +32,7 @@
 		    };
 
 		    static const half4 OUTLINE_COLOR = half4(0,0,0,0);
-		    static const float OUTLINE_WIDTH = 0.02;
+		    static const float OUTLINE_WIDTH = 0.03;
 
 		    v2f vert (appdata v)
 		    {		    	
