@@ -42,5 +42,11 @@ namespace CodeBase.AI.Components
             IsPlaying = false;
             IsDone = false;
         }
+
+        public void Stop() =>
+            IsPlaying = false;
+
+        public void Start() =>
+            IsPlaying = true;
     }
 }
