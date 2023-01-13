@@ -41,12 +41,12 @@ namespace CodeBase.Ufo
             if (Count <= 0)
                 return;
             
-            Changed?.Invoke();
             var randomIndex = Random.Range(0, _attractedBodies.Count);
             var body = _attractedBodies[randomIndex];
             body.transform.parent = null;
             _attractedBodies.Remove(body);
             body.Uncollect();
+            Changed?.Invoke();
         }
     }
 }
