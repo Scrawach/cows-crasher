@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 2184803420682314571}
   - component: {fileID: 1523150199128378704}
   - component: {fileID: 2960482229060703216}
-  - component: {fileID: 1430443839967882149}
+  - component: {fileID: 6183365381421900779}
   - component: {fileID: 2749642620412406308}
   m_Layer: 0
   m_Name: Antigravity Ray
@@ -395,7 +395,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1430443839967882149
+--- !u!64 &6183365381421900779
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,7 +408,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6680898497171827429, guid: be82209218a1ceb4cbd2cf3c4de8547b, type: 3}
+  m_Mesh: {fileID: 6680898497171827429, guid: f494fb44ea1cabd0196dc789cfd08dc8, type: 3}
 --- !u!114 &2749642620412406308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2508185526704531185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -1.03}
+  m_LocalPosition: {x: -0, y: -0, z: -0.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2184803420682314571}
@@ -669,7 +669,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -2
+      scalar: -1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -785,7 +785,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.15
+      scalar: 0.12
       minScalar: 0.08
       maxCurve:
         serializedVersion: 2
@@ -1168,7 +1168,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 180, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1.2}
+    m_Scale: {x: 1, y: 1, z: 1.08}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -3132,11 +3132,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
