@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: d7550013c8ac8cb4c898c1564bd9c8f9
+guid: bc2b93c3344d8557997ab13112d53ca4
 ModelImporter:
   serializedVersion: 19301
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 6344467139485879272
+    second: Angry Chicken.001|CubeAction
+  - first:
+      74: -8262827180296680708
+    second: Angry Chicken.001|CubeAction.001
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -34,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 80
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -81,7 +87,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.79999995
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
