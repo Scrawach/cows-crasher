@@ -11,6 +11,7 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private FindSafetyPlace _findSafetyPlace;
         [SerializeField] private NavMeshAgent _agent;
         [SerializeField] private Mooing _mooing;
+        [SerializeField] private ParticleSystem _runAwayVfx;
 
         private SafetyPlace _safetyPlace;
         private float _previousSpeed;
@@ -23,6 +24,7 @@ namespace CodeBase.AI.Cow.States
             _agent.speed = _speed;
             _agent.destination = _safetyPlace.SafePoint.position;
             _safetyPlace.TakeSeat();
+            _runAwayVfx.Play();
         }
 
         public override void Exit()
@@ -31,6 +33,7 @@ namespace CodeBase.AI.Cow.States
             _agent.enabled = false;
             _safetyPlace.FreeSeat();
             _mooing.Forget();
+            _runAwayVfx.Stop();
         }
     }
 }

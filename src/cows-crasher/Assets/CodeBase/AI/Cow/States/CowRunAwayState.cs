@@ -14,6 +14,7 @@ namespace CodeBase.AI.Cow.States
         [SerializeField] private EnemyFeeling _enemyFeeling;
         [SerializeField] private float _timeBeforeChangeDirection = 2f;
         [SerializeField] private Mooing _mooing;
+        [SerializeField] private ParticleSystem _runAwayVfx;
         
         private float _directionChangeCooldown = 2f;
         private float _safetyDistance;
@@ -29,6 +30,7 @@ namespace CodeBase.AI.Cow.States
             _agent.speed = _runAwaySpeed;
             InSafety = false;
             _agent.enabled = true;
+            _runAwayVfx.Play();
         }
 
         public override void Exit()
@@ -36,6 +38,7 @@ namespace CodeBase.AI.Cow.States
             _agent.speed = _previousSpeed;
             _agent.enabled = false;
             _mooing.Forget();
+            _runAwayVfx.Stop();
         }
 
         public void Update()
