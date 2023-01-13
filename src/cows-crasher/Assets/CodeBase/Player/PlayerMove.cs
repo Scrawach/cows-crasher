@@ -1,4 +1,4 @@
-﻿using CodeBase.Logic;
+﻿using CodeBase.Common;
 using CodeBase.Ufo;
 using UnityEngine;
 

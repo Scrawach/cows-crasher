@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.AI.Components
 {
     [RequireComponent(typeof(Collider))]
     public class Observer : MonoBehaviour

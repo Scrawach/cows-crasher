@@ -6864,7 +6864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetObserver: {fileID: 7392091700701867218}
-  _rotationSpeed: 1
+  _rotationSpeed: 0.4
 --- !u!114 &7392091701213436139
 MonoBehaviour:
   m_ObjectHideFlags: 0

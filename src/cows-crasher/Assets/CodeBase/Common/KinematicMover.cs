@@ -2,7 +2,7 @@ using System;
 using CodeBase.AI.Components;
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Common
 {
     public class KinematicMover : Mover
     {

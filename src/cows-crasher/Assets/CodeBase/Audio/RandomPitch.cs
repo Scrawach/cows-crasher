@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Audio
 {
     public class RandomPitch : MonoBehaviour
     {

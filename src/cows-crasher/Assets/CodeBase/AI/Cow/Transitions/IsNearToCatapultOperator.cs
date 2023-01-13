@@ -1,6 +1,5 @@
 using CodeBase.AI.Cow.Transitions.Abstract;
-using CodeBase.Logic;
-using CodeBase.Logic.Turrets;
+using CodeBase.Turrets;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow.Transitions

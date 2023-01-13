@@ -1,4 +1,4 @@
-﻿using CodeBase.Logic;
+﻿using CodeBase.LevelManagement;
 using UnityEngine;
 
 namespace CodeBase.CameraLogic

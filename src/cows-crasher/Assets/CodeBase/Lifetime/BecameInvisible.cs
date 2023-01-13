@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Lifetime
 {
     public class BecameInvisible : MonoBehaviour
     {

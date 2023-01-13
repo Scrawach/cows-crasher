@@ -1,4 +1,4 @@
-using CodeBase.Logic;
+using CodeBase.Common;
 using UnityEngine;
 
 namespace CodeBase.Ufo

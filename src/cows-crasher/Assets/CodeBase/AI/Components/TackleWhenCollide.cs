@@ -1,6 +1,7 @@
+using CodeBase.Common;
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.AI.Components
 {
     public class TackleWhenCollide : MonoBehaviour
     {

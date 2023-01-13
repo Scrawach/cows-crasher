@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Lifetime
 {
     public class DestroyAfter : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using CodeBase.AI.Components;
 using UnityEngine;
 
-namespace CodeBase.Logic.Turrets
+namespace CodeBase.Turrets
 {
     public class CatapultOperator : MonoBehaviour
     {

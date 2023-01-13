@@ -1,5 +1,4 @@
 using CodeBase.LevelManagement;
-using CodeBase.Logic;
 using CodeBase.Ufo;
 using TMPro;
 using UnityEngine;

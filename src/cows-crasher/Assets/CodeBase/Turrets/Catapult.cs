@@ -1,8 +1,8 @@
 using CodeBase.AI.Components;
-using CodeBase.Logic.Projectiles;
+using CodeBase.Projectiles;
 using UnityEngine;
 
-namespace CodeBase.Logic.Turrets
+namespace CodeBase.Turrets
 {
     public class Catapult : MonoBehaviour
     {

@@ -1,9 +1,10 @@
 using System;
 using CodeBase.AI.Components;
+using CodeBase.Common;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace CodeBase.Logic.Turrets
+namespace CodeBase.Turrets
 {
     public class CatapultAnimator : MonoBehaviour
     {

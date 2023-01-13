@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.Common
 {
     public static class Animations
     {

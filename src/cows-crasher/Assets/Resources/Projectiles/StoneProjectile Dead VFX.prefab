@@ -9654,7 +9654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 562116216996833252}
-  _range: {x: 0.3, y: 0.4}
+  _range: {x: 0.26, y: 0.33}
 --- !u!82 &562116216996833252
 AudioSource:
   m_ObjectHideFlags: 0

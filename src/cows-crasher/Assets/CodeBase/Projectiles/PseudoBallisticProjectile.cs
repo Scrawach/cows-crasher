@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Logic.Projectiles
+namespace CodeBase.Projectiles
 {
     public class PseudoBallisticProjectile : Projectile
     {

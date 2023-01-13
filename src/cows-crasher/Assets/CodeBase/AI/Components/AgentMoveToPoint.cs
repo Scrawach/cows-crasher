@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace CodeBase.Logic
+namespace CodeBase.AI.Components
 {
     public class AgentMoveToPoint : MonoBehaviour
     {

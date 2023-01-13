@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace CodeBase.Logic
+namespace CodeBase.Common
 {
     public class RandomTextureOnAwake : MonoBehaviour
     {

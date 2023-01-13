@@ -1,7 +1,8 @@
+using CodeBase.Common;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace CodeBase.Logic
+namespace CodeBase.AI.Components
 {
     public class AnimateAlongAgent : MonoBehaviour
     {

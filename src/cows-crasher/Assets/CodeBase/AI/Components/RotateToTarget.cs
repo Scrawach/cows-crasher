@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Logic
+namespace CodeBase.AI.Components
 {
     public class RotateToTarget : MonoBehaviour
     {
@@ -31,7 +31,7 @@ namespace CodeBase.Logic
         
         private Vector3 PositionToLookAt()
         {
-            var positionDelta = _target.position - transform.position;
+            var positionDelta = (_target.position - transform.position).normalized;
             return new Vector3(positionDelta.x, transform.position.y, positionDelta.z);
         }
     
