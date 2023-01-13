@@ -19,6 +19,13 @@
 
         Pass
         {
+            Stencil 
+            {
+                Ref 1
+                Comp Always
+                Pass Replace
+            }
+            
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
@@ -70,5 +77,6 @@
         }
         
         UsePass "Hidden/CowsCrasher/ToonOutline/OUTLINE"
+        UsePass "Legacy Shaders/VertexLit/SHADOWCASTER"
     }
 }

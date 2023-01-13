@@ -10,7 +10,13 @@
 		Pass
 		{	
 			Name "Outline"
-			Cull Front
+			Cull Off
+
+			Stencil 
+			{
+			    Ref 1
+			    Comp Greater
+			}
 
 		    CGPROGRAM
 		    #pragma vertex vert
@@ -30,10 +36,10 @@
 		    };
 
 		    static const half4 OUTLINE_COLOR = half4(0,0,0,0);
-		    static const float OUTLINE_WIDTH = 0.05;
+		    static const float OUTLINE_WIDTH = 0.02;
 
 		    v2f vert (appdata v)
-		    {
+		    {		    	
 		        v.vertex.xyz += v.normal * OUTLINE_WIDTH;
 		        v2f o;
 		        o.vertex = UnityObjectToClipPos(v.vertex);
