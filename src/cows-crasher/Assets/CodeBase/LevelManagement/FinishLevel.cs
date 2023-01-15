@@ -2,7 +2,9 @@ using System;
 using CodeBase.CameraLogic;
 using CodeBase.Player;
 using CodeBase.Ufo;
+using CodeBase.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.LevelManagement
 {
@@ -12,7 +14,8 @@ namespace CodeBase.LevelManagement
         [SerializeField] private LevelData _level;
         [SerializeField] private PlayerInput _input;
         [SerializeField] private CameraFollow _cameraFollow;
-        [SerializeField] private UfoMovementCutscene _cutscene;
+        [SerializeField] private Cutscene _cutscene;
+        [SerializeField] private LoadingCurtain _loadingCurtain;
         
         private void OnEnable() =>
             _collector.Changed += OnScoreChanged;
@@ -30,12 +33,19 @@ namespace CodeBase.LevelManagement
         {
             _input.IsBlocked = true;
             _cameraFollow.enabled = false;
-            _cutscene.Play(LoadNextLevel);
+            
+            _cutscene.Play(() =>
+            {
+                _loadingCurtain.Show(LoadNextLevel);
+            });
         }
 
         private void LoadNextLevel()
         {
-            Debug.Log($"Go to next level!");
+            var current = SceneManager.GetActiveScene();
+            var nextSceneIndex = current.buildIndex + 1;
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                SceneManager.LoadScene(nextSceneIndex);
         }
     }
 }

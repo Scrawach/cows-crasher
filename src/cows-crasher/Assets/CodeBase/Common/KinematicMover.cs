@@ -1,5 +1,6 @@
 using System;
 using CodeBase.AI.Components;
+using CodeBase.LevelManagement;
 using UnityEngine;
 
 namespace CodeBase.Common
@@ -7,6 +8,7 @@ namespace CodeBase.Common
     public class KinematicMover : Mover
     {
         [SerializeField] private Timer _tackleProcess;
+        [SerializeField] private LevelBounds _bounds;
         private Vector3 _tackleMovement;
         private bool _hasTackle;
         
@@ -21,8 +23,14 @@ namespace CodeBase.Common
             
             if (_hasTackle) 
                 ProcessTackle();
+
+            var movement = Direction * moveStep;
+            var nextPosition = transform.position + movement;
+
+            if (!_bounds.Has(nextPosition))
+                return;
             
-            transform.Translate(Direction * moveStep, Space.World);
+            transform.Translate(movement, Space.World);
             Direction = Direction.normalized;
         }
 
@@ -35,7 +43,13 @@ namespace CodeBase.Common
 
         public void Tackle(Vector3 direction, float strength)
         {
-            _tackleMovement = direction * strength;
+            var tackleMoving = direction * strength;
+
+            if (_hasTackle)
+                _tackleMovement += tackleMoving;
+            else
+                _tackleMovement = tackleMoving;
+            
             _tackleMovement.y = 0;
             _hasTackle = true;
             _tackleProcess.Play();

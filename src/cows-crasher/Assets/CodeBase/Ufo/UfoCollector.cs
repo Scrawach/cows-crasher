@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.AI.Components;
+using CodeBase.AI.Cow;
+using CodeBase.Audio;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,6 +12,7 @@ namespace CodeBase.Ufo
     {
         [SerializeField] private AntigravityZone _antigravity;
         [SerializeField] private UfoRay _ray;
+        [SerializeField] private AudioPlayer _collectSfx;
 
         private List<UfoAttractedBody> _attractedBodies;
         public int Count => _attractedBodies.Count;
@@ -32,7 +35,7 @@ namespace CodeBase.Ufo
             attractedBody.Collect();
             attractedBody.transform.parent = transform;
             _attractedBodies.Add(attractedBody);
-            
+            Instantiate(_collectSfx, transform.position, Quaternion.identity);
             Changed?.Invoke();
         }
 
@@ -46,6 +49,7 @@ namespace CodeBase.Ufo
             body.transform.parent = null;
             _attractedBodies.Remove(body);
             body.Uncollect();
+            Instantiate(_collectSfx, transform.position, Quaternion.identity);
             Changed?.Invoke();
         }
     }

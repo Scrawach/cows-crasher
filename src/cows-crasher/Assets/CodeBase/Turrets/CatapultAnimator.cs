@@ -15,8 +15,6 @@ namespace CodeBase.Turrets
         
         public bool IsBusy { get; private set; }
         
-        
-
         private void OnEnable() =>
             _animator.enabled = true;
 

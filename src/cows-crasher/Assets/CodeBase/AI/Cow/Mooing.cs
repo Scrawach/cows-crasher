@@ -1,5 +1,8 @@
+using System;
 using CodeBase.AI.Components;
+using CodeBase.Audio;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CodeBase.AI.Cow
 {
@@ -8,16 +11,20 @@ namespace CodeBase.AI.Cow
         [SerializeField] private UfoAttractedBody _attractedBody;
         [SerializeField] private float _radius = 10f;
         [SerializeField] private float _cooldown;
+        [SerializeField] private AudioPlayer _audio;
 
         private float _elapsed;
+        private AudioPlayer _activeAudio;
         
         public bool Heard { get; private set; }
+
+        public bool CanMoo => CooldownIsUp();
 
         private void Update()
         {
             UpdateCooldown();
 
-            if (_attractedBody.IsAttracting && CooldownIsUp())
+            if (_attractedBody.IsAttracting && CanMoo)
             {
                 _elapsed = 0;
                 Moo();
@@ -36,8 +43,10 @@ namespace CodeBase.AI.Cow
             _elapsed = 0;
         }
 
-        private void Moo()
+        public void Moo()
         {
+            PlaySound();
+
             var listeners = Physics.OverlapSphere(transform.position, _radius);
             
             foreach (var listener in listeners)
@@ -45,6 +54,15 @@ namespace CodeBase.AI.Cow
                 if (listener.TryGetComponent(out Mooing mooing))
                     mooing.Listen();
             }
+        }
+
+        private void PlaySound()
+        {
+            if (_activeAudio != null && _activeAudio.IsPlaying)
+                return;
+
+            _activeAudio = Instantiate(_audio, transform.position, Quaternion.identity);
+            _activeAudio.Play();
         }
 
         private void UpdateCooldown()

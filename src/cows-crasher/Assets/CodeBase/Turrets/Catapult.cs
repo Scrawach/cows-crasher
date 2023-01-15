@@ -1,6 +1,9 @@
 using CodeBase.AI.Components;
+using CodeBase.AI.Cow;
+using CodeBase.Audio;
 using CodeBase.Projectiles;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Turrets
 {
@@ -13,6 +16,7 @@ namespace CodeBase.Turrets
         [SerializeField] private float _attackAngle;
         [SerializeField] private Transform _firePoint;
         [SerializeField] private Projectile _projectile;
+        [SerializeField] private AudioPlayer _attackSfx;
 
         private GameObject _target;
         private bool _isAttacking;
@@ -48,6 +52,7 @@ namespace CodeBase.Turrets
             _lastAttackPosition = target.transform.position;
             _isAttacking = true;
             _animator.StartAttack(OnAttackDone);
+            Instantiate(_attackSfx, transform.position, Quaternion.identity);
         }
 
         private void OnAttackDone()

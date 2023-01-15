@@ -12,6 +12,7 @@ namespace CodeBase.LevelManagement
         [SerializeField] private CameraFollow _cameraFollow;
         [SerializeField] private UfoMovementCutscene _cutscene;
         [SerializeField] private Storyteller _storyteller;
+        [SerializeField] private LoadingCurtain _loadingCurtain;
 
         private void Awake()
         {
@@ -19,7 +20,10 @@ namespace CodeBase.LevelManagement
             _cameraFollow.enabled = false;
         }
 
-        private void Start() =>
+        private void Start() => 
+            _loadingCurtain.Hide(onDone: BeginLevel);
+
+        public void BeginLevel() => 
             _cutscene.Play(StartStory);
 
         private void StartStory()

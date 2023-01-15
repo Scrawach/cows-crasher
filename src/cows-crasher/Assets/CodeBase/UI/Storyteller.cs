@@ -29,8 +29,8 @@ namespace CodeBase.UI
             }
             else
             {
-                _onEnded?.Invoke();
                 _storyPanel.Hide();
+                _onEnded?.Invoke();
             }
         }
     }

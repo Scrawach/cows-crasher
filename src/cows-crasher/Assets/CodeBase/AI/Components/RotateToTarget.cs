@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CodeBase.AI.Components
@@ -31,12 +32,12 @@ namespace CodeBase.AI.Components
         
         private Vector3 PositionToLookAt()
         {
-            var positionDelta = (_target.position - transform.position).normalized;
+            var positionDelta = (_target.position - transform.position);
             return new Vector3(positionDelta.x, transform.position.y, positionDelta.z);
         }
     
         private Quaternion SmoothedRotation(Quaternion rotation, Vector3 positionToLook) =>
-            Quaternion.RotateTowards(rotation, TargetRotation(positionToLook), _rotationSpeed);
+            Quaternion.RotateTowards(rotation, TargetRotation(positionToLook), _rotationSpeed * Time.deltaTime);
 
         private Quaternion TargetRotation(Vector3 position) =>
             Quaternion.LookRotation(position);

@@ -17,6 +17,7 @@ namespace CodeBase.AI.Cow.States
         {
             _safety = _safetyPlace.Nearby();
             _body.forward = _safety.SafePoint.forward;
+            _body.transform.position = _safety.SafePoint.position;
             _timer.Play();
             _safety.TakeSeat();
             _collider.enabled = false;

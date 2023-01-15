@@ -9,6 +9,7 @@ namespace CodeBase.LevelManagement
         [SerializeField] private Vector3 _movement;
         [SerializeField] private float _duration;
         [SerializeField] private Transform _ufo;
+        [SerializeField] private float _waitBeforeStart;
         [SerializeField] private bool _skip;
         
         public override void Play(Action onEnded = null)
@@ -24,10 +25,11 @@ namespace CodeBase.LevelManagement
             }
         }
 
-        private static IEnumerator Disappearance(Transform ufo, Vector3 target, float duration, Action onEnded = null)
+        private IEnumerator Disappearance(Transform ufo, Vector3 target, float duration, Action onEnded = null)
         {
-            yield return new WaitForSeconds(1f);
-            
+            yield return new WaitForSeconds(_waitBeforeStart);
+
+            var deltaTimeWait = new WaitForEndOfFrame();
             var start = ufo.position;
             var end = start + target;
             var timeStep = Time.deltaTime / duration;
@@ -37,7 +39,7 @@ namespace CodeBase.LevelManagement
             {
                 progress += timeStep;
                 ufo.position = Vector3.Lerp(start, end, progress);
-                yield return null;
+                yield return deltaTimeWait;
             }
             
             onEnded?.Invoke();
