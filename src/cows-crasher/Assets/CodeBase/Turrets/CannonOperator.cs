@@ -1,5 +1,4 @@
 ﻿using CodeBase.AI.Components;
-using CodeBase.AI.Cow;
 using UnityEngine;
 
 namespace CodeBase.Turrets
@@ -7,43 +6,26 @@ namespace CodeBase.Turrets
     public class CannonOperator : MonoBehaviour
     {
         [SerializeField] private Cannon _cannon;
-        [SerializeField] private Collider _observerCollider;
         [SerializeField] private Timer _cooldownTimer;
-        [SerializeField] private UfoAttractedBody _ufoAttractedBody;
-        [SerializeField] private Collider _body;
 
-        private bool _isActivated;
+        private GameObject _target;
 
-        private void Update() => 
-            SwitchActivation();
-
-        private void SwitchActivation()
+        private void Update()
         {
-            switch (_isActivated)
-            {
-                case true when _ufoAttractedBody.IsAttracting || !_body.enabled:
-                    Deactivate();
-                    break;
-                case false when !_ufoAttractedBody.IsAttracting && _body.enabled:
-                    Activate();
-                    break;
-            }
+            if (CanAttack()) 
+                Attack();
         }
 
-        private void Activate()
+        private void Attack()
         {
-            _observerCollider.enabled = true;
-            _cannon.enabled = true;
-            _cooldownTimer.Start();
-            _isActivated = true;
+            _cannon.Attack(_target);
+            _cooldownTimer.Play();
         }
 
-        private void Deactivate()
-        {
-            _observerCollider.enabled = false;
-            _cannon.enabled = false;
-            _cooldownTimer.Stop();
-            _isActivated = false;
-        }
+        public void SetTarget(GameObject target) =>
+            _target = target;
+
+        private bool CanAttack() =>
+            _target != null && _cooldownTimer.IsDone && _cannon.CanAttack();
     }
 }
