@@ -6,19 +6,27 @@ namespace CodeBase.AI.Components
     public class AgentMoveToPoint : MonoBehaviour
     {
         [SerializeField] private NavMeshAgent _agent;
-        [SerializeField] private Transform _point;
 
+        private Vector3 _target;
+        private bool _hasTarget;
+        
         private void Update()
         {
-            if (_agent.enabled && TargetExist() && TargetNotReached()) 
-                _agent.destination = _point.position;
+            if (_hasTarget && TargetNotReached()) 
+                _agent.destination = _target;
         }
 
-        private bool TargetExist() =>
-            _point != null;
+        public void MoveTo(Vector3 point)
+        {
+            _target = point;
+            _hasTarget = true;
+        }
 
-        private bool TargetNotReached() =>
-            DistanceTo(_point.position) >= _agent.stoppingDistance;
+        public void ResetMovement() =>
+            _hasTarget = false;
+
+        public bool TargetNotReached() =>
+            DistanceTo(_target) >= _agent.stoppingDistance;
 
         private float DistanceTo(Vector3 point)
         {

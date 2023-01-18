@@ -5265,6 +5265,7 @@ GameObject:
   - component: {fileID: 4621355049599548582}
   - component: {fileID: 2643407366511896137}
   - component: {fileID: 9096148164375035055}
+  - component: {fileID: 8188333782623688207}
   - component: {fileID: 1092242742961488136}
   m_Layer: 0
   m_Name: Cow
@@ -5416,6 +5417,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nearbySafetyPlace: {fileID: 0}
   _radius: 10
+--- !u!114 &8188333782623688207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621355049599548584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36287d4a3a5a4d1f99ae6cedefd334b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 4621355049599548579}
 --- !u!114 &1092242742961488136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6179,6 +6193,7 @@ MonoBehaviour:
   - {fileID: 5923724560167231112}
   - {fileID: 1083816676}
   _agent: {fileID: 4621355049599548579}
+  _moveToPoint: {fileID: 8188333782623688207}
   patrolRoute: {fileID: 1914546789}
 --- !u!1 &7356638279785003881
 GameObject:
