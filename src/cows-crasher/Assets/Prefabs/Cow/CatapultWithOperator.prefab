@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643177323417457678}
-  - component: {fileID: 3643177323417457679}
+  - component: {fileID: 7073887230876088371}
   m_Layer: 0
   m_Name: IsRaised ToPatrol
   m_TagString: Untagged
@@ -168,7 +168,7 @@ Transform:
   m_Father: {fileID: 3643177324706629542}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3643177323417457679
+--- !u!114 &7073887230876088371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,11 +177,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3643177323417457676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1916c9c4c12437f935180b42bcf835d, type: 3}
+  m_Script: {fileID: 11500000, guid: e357a693ecee4d779f90e459acdc3dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   NextState: {fileID: 3643177324846538029}
-  _risingTime: {fileID: 3248308509966608940}
+  _timer: {fileID: 3248308509966608940}
 --- !u!1 &3643177323626702706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Transitions>k__BackingField:
   - {fileID: 3643177323742585618}
-  - {fileID: 3643177323417457679}
+  - {fileID: 7073887230876088371}
   Body: {fileID: 3643177323710409501}
   _risingTime: {fileID: 3248308509966608940}
 --- !u!1 &3643177324817859463
