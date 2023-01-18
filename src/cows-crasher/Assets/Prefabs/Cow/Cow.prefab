@@ -6331,7 +6331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextState: {fileID: 1807030333163951356}
   _agent: {fileID: 4621355049599548579}
-  _distance: 0.25
+  _distance: 0.5
   _safetyPlace: {fileID: 9096148164375035055}
 --- !u!1 &8055452522868480608
 GameObject:
