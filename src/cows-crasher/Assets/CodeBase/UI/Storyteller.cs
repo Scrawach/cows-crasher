@@ -13,7 +13,7 @@ namespace CodeBase.UI
 
         private void Awake() =>
             _storySequence = StorySequence.FromAsset(_storyText);
-        
+
         public void Show(Action onEnded = null)
         {
             _onEnded = onEnded;
@@ -24,8 +24,8 @@ namespace CodeBase.UI
         {
             if (_storySequence.HasNextItem())
             {
-                var story = _storySequence.Next();
-                _storyPanel.Show(story.Russian, ShowStoryItem);
+                var item = _storySequence.Next();
+                _storyPanel.Show(item, ShowStoryItem);
             }
             else
             {
