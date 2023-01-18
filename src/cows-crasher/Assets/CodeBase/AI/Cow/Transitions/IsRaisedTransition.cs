@@ -1,13 +1,14 @@
-using CodeBase.AI.Cow.States;
+using CodeBase.AI.Components;
 using CodeBase.AI.Cow.Transitions.Abstract;
+using UnityEngine;
 
 namespace CodeBase.AI.Cow.Transitions
 {
     public class IsRaisedTransition : Transition
     {
-        public CowRaisingState RisingState;
-        
+        [SerializeField] private Timer _risingTime;
+
         public override bool NeedTransit() =>
-            RisingState.IsRaised;
+            _risingTime.IsDone;
     }
 }

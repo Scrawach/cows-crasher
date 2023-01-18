@@ -1,5 +1,5 @@
+using CodeBase.AI.Components;
 using CodeBase.AI.Cow.States.Abstract;
-using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow.States
@@ -7,41 +7,24 @@ namespace CodeBase.AI.Cow.States
     public class CowRaisingState : State
     {
         [SerializeField] private Transform Body;
-        [SerializeField] private float _risingTime = 0.5f;
+        [SerializeField] private Timer _risingTime;
 
         private Quaternion _startRotation;
         private Quaternion _desiredRotation;
 
-        private float _elapsed;
-        
-        public bool IsRaised { get; private set; }
-        
-
         public override void Enter()
         {
-            IsRaised = false;
-            _elapsed = 0;
             Body.position = DesiredPosition();
             _startRotation = Body.rotation;
             _desiredRotation = Quaternion.Euler(DesiredEulerAngles());
+            _risingTime.Play();
         }
 
         public override void Exit() { }
 
-        public void Update()
-        {
-            if (IsRaised)
-                return;
-            
-            _elapsed += Time.deltaTime;
-            
-            var lerpProgress = _elapsed / _risingTime;
-            Body.transform.rotation = Quaternion.Slerp(_startRotation, _desiredRotation, lerpProgress);
+        public void Update() =>
+            Body.transform.rotation = Quaternion.Slerp(_startRotation, _desiredRotation, _risingTime.Progress);
 
-            if (_elapsed >= _risingTime) 
-                IsRaised = true;
-        }
-        
         private Vector3 DesiredPosition()
         {
             var position = Body.position;

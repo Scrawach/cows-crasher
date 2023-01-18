@@ -4807,6 +4807,50 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &2616111538880305960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639264738449613429}
+  - component: {fileID: 6933755218501103474}
+  m_Layer: 0
+  m_Name: RisingUp Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &639264738449613429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616111538880305960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7135538857671768872}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6933755218501103474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2616111538880305960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: 0.5
 --- !u!1 &5163871993299718231
 GameObject:
   m_ObjectHideFlags: 0
@@ -5087,6 +5131,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7135538858157345170}
+  - {fileID: 639264738449613429}
   m_Father: {fileID: 7135538859323525415}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5105,7 +5150,7 @@ MonoBehaviour:
   <Transitions>k__BackingField:
   - {fileID: 7135538858157345171}
   Body: {fileID: 5163871993299718224}
-  _risingTime: 0.4
+  _risingTime: {fileID: 6933755218501103474}
 --- !u!1 &7135538857832393282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5197,7 +5242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextState: {fileID: 7135538858439127397}
-  RisingState: {fileID: 7135538857671768873}
+  _risingTime: {fileID: 6933755218501103474}
 --- !u!1 &7135538858158212080
 GameObject:
   m_ObjectHideFlags: 0

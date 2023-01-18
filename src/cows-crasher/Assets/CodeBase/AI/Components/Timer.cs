@@ -12,6 +12,8 @@ namespace CodeBase.AI.Components
         
         public bool IsDone { get; private set; }
 
+        public float Progress => Elapsed / Target;
+
         private void Update()
         {
             if (IsPlaying)
