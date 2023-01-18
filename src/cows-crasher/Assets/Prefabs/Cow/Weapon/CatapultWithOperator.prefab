@@ -1287,7 +1287,7 @@ MonoBehaviour:
   - {fileID: 3643177323111717740}
   _agent: {fileID: 3643177323710409571}
   _moveToPoint: {fileID: 8318157349200042905}
-  patrolRoute: {fileID: 3643177324862234749}
+  _patrolRoute: {fileID: 3643177324862234749}
 --- !u!1 &3643177324862234747
 GameObject:
   m_ObjectHideFlags: 0
