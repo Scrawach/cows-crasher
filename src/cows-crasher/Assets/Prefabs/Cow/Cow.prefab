@@ -4946,6 +4946,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NextState: {fileID: 4387983195674841129}
   _findSafetyPlace: {fileID: 9096148164375035055}
+--- !u!1 &806140915716711558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8701437983581844606}
+  - component: {fileID: 8599285526676193599}
+  m_Layer: 0
+  m_Name: Mooing Cooldown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8701437983581844606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806140915716711558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4621355049599548591}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8599285526676193599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806140915716711558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: 3
 --- !u!1 &1103468710174713905
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,6 +5288,7 @@ Transform:
   - {fileID: 7245479330252968155}
   - {fileID: 1914546788}
   - {fileID: 8162704852328069942}
+  - {fileID: 8701437983581844606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5355,7 +5400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attractedBody: {fileID: 4621355049599548583}
   _radius: 20
-  _cooldown: 2
+  _cooldownTimer: {fileID: 8599285526676193599}
   _audio: {fileID: 5184877591155187442, guid: 9520b5d1d929e544a9c6f6417b76a32d, type: 3}
 --- !u!114 &9096148164375035055
 MonoBehaviour:

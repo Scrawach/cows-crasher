@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8433500437147865856}
   - component: {fileID: 2923202702852061595}
   - component: {fileID: 2347780003456070046}
+  - component: {fileID: 1475764030546396957}
   m_Layer: 0
   m_Name: Cannon Operator
   m_TagString: Untagged
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864347490769443494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 763f5dfcabf842799143d2a94667ea3b, type: 3}
   m_Name: 
@@ -74,6 +75,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: 2
+--- !u!114 &1475764030546396957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864347490769443494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b5d5889faf4cc49e7708905abd96fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackComponent: {fileID: 2923202702852061595}
+  _cooldownTimer: {fileID: 2347780003456070046}
+  _body: {fileID: 8304203765806639912}
+  _ufoAttracted: {fileID: 8304203765806639915}
 --- !u!1001 &3682867785862158220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +166,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3682867785862158220}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &8304203765806639912 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 4621355049599548580, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3682867785862158220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8304203765806639915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4621355049599548583, guid: dc4bb6dda1a78bf40be189f99cc69b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3682867785862158220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d860dc78d54345238b34ef5b1a445b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8409570905054979665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5163623897937490397, guid: dc4bb6dda1a78bf40be189f99cc69b6d,

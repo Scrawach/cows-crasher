@@ -541,6 +541,7 @@ Transform:
   m_Children:
   - {fileID: 4016379766867422453}
   - {fileID: 1374240965513212525}
+  - {fileID: 6664962664172870006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -112.941, z: 0}
@@ -652,7 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attractedBody: {fileID: 4016379766785121809}
   _radius: 20
-  _cooldown: 2
+  _cooldownTimer: {fileID: 8070702509948941228}
   _audio: {fileID: 5184877591155187442, guid: 9520b5d1d929e544a9c6f6417b76a32d, type: 3}
 --- !u!114 &694494972194889241
 MonoBehaviour:
@@ -767,6 +768,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stepPlayer: {fileID: 5184877591155187442, guid: 6e0a0b07932a8ee4f8ac4e780e903fef,
     type: 3}
+--- !u!1 &6520530779171952685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6664962664172870006}
+  - component: {fileID: 8070702509948941228}
+  m_Layer: 0
+  m_Name: Mooing Coldown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6664962664172870006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520530779171952685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4016379766785121817}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8070702509948941228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6520530779171952685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: 3
 --- !u!1 &8355658385525052856
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,15 +5714,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 112abe509810a6f418eacca3cdc2e68b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7550013c8ac8cb4c898c1564bd9c8f9, type: 3}
---- !u!23 &2340914954364413956 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d7550013c8ac8cb4c898c1564bd9c8f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4016379766795465856}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3474445075358258027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7550013c8ac8cb4c898c1564bd9c8f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4016379766795465856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2340914954364413956 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d7550013c8ac8cb4c898c1564bd9c8f9,
     type: 3}
   m_PrefabInstance: {fileID: 4016379766795465856}
   m_PrefabAsset: {fileID: 0}

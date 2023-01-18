@@ -22,14 +22,11 @@ namespace CodeBase.Turrets
             _cooldownTimer.Play();
         }
 
-        public override void SetTarget(GameObject target)
-        {
+        public override void SetTarget(GameObject target) =>
             _target = target;
-            enabled = true;
-        }
 
         public override void ResetTarget() =>
-            enabled = false;
+            _target = null;
 
         private bool CanAttack() =>
             _target != null && _cooldownTimer.IsDone && _cannon.CanAttack();
