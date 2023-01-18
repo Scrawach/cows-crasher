@@ -1,13 +1,20 @@
-using CodeBase.AI.Cow.States;
+using CodeBase.AI.Components;
 using CodeBase.AI.Cow.Transitions.Abstract;
+using UnityEngine;
 
 namespace CodeBase.AI.Cow.Transitions
 {
     public class InSafetyTransition : Transition
     {
-        public CowRunAwayState RunAwayState;
+        [SerializeField] private EnemyFeeling _enemyFeeling;
+        [SerializeField] private float _safetyDistance;
 
-        public override bool NeedTransit() =>
-            RunAwayState.InSafety;
+        public override bool NeedTransit()
+        {
+            var target = _enemyFeeling.Enemy.position;
+            target.y = 0;
+            var distance = Vector3.Distance(transform.position, target);
+            return distance >= _safetyDistance;
+        }
     }
 }
