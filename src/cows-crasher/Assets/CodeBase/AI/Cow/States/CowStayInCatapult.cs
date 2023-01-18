@@ -6,12 +6,13 @@ namespace CodeBase.AI.Cow.States
 {
     public class CowStayInCatapult : State
     {
-        [SerializeField] private Transform _body;
+        [SerializeField] private Transform _target;
         [SerializeField] private CatapultOperator _catapultOperator;
         
         public override void Enter()
         {
-            _body.forward = (_catapultOperator.transform.position - _body.transform.position).normalized;
+            var cow = _catapultOperator.transform;
+            cow.forward = (_target.transform.position - cow.position).normalized;
             _catapultOperator.Activate();
         }
 

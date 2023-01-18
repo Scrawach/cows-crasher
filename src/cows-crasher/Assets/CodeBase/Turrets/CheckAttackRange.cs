@@ -6,7 +6,7 @@ namespace CodeBase.Turrets
     public class CheckAttackRange : MonoBehaviour
     {
         [SerializeField] private Observer _observer;
-        [SerializeField] private CannonOperator _operator;
+        [SerializeField] private TargetHandler _handler;
 
         private void OnEnable()
         {
@@ -20,13 +20,10 @@ namespace CodeBase.Turrets
             _observer.Exited -= OnExitFromAttackRange;
         }
 
-        private void OnEnteredToAttackRange(GameObject target)
-        {
-            _operator.SetTarget(target);
-            _operator.enabled = true;
-        }
+        private void OnEnteredToAttackRange(GameObject target) =>
+            _handler.SetTarget(target);
 
         private void OnExitFromAttackRange(GameObject target) =>
-            _operator.enabled = false;
+            _handler.ResetTarget();
     }
 }

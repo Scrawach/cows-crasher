@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _observer: {fileID: 8145817302849970223}
-  _operator: {fileID: 2923202702852061595}
+  _handler: {fileID: 2923202702852061595}
 --- !u!114 &2923202702852061595
 MonoBehaviour:
   m_ObjectHideFlags: 0

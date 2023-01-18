@@ -1,35 +1,34 @@
-using System;
+using CodeBase.Turrets;
 using UnityEngine;
 
 namespace CodeBase.AI.Components
 {
-    public class RotateToTarget : MonoBehaviour
+    public class RotateToTarget : TargetHandler
     {
-        [SerializeField] private Observer _targetObserver;
         [SerializeField] private float _rotationSpeed;
 
         private Transform _target;
 
         public float AngleToTarget => Quaternion.Angle(transform.rotation, TargetRotation(PositionToLookAt()));
         
-        private void OnEnable()
-        {
-            _targetObserver.Entered += OnTargetEntered;
-            _targetObserver.Exited += OnTargetExited;
-        }
-
-        private void OnDisable()
-        {
-            _targetObserver.Entered -= OnTargetEntered;
-            _targetObserver.Exited -= OnTargetExited;
-        }
-
         private void Update()
         {
-            if (_target != null) 
-                transform.rotation = SmoothedRotation(transform.rotation, PositionToLookAt());
+            if (HasTarget()) 
+                SmoothRotate();
         }
         
+        public override void SetTarget(GameObject target) =>
+            _target = target.transform;
+
+        public override void ResetTarget() =>
+            _target = null;
+        
+        private Quaternion SmoothRotate() =>
+            transform.rotation = SmoothedRotation(transform.rotation, PositionToLookAt());
+
+        private bool HasTarget() =>
+            _target != null;
+
         private Vector3 PositionToLookAt()
         {
             var positionDelta = (_target.position - transform.position);
@@ -41,11 +40,5 @@ namespace CodeBase.AI.Components
 
         private Quaternion TargetRotation(Vector3 position) =>
             Quaternion.LookRotation(position);
-        
-        private void OnTargetEntered(GameObject target) =>
-            _target = target.transform;
-
-        private void OnTargetExited(GameObject target) =>
-            _target = null;
     }
 }

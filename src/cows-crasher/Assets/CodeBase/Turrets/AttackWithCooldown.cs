@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace CodeBase.Turrets
 {
-    public class CannonOperator : MonoBehaviour
+    public class AttackWithCooldown : TargetHandler
     {
-        [SerializeField] private Cannon _cannon;
+        [SerializeField] private Weapon _cannon;
         [SerializeField] private Timer _cooldownTimer;
 
         private GameObject _target;
@@ -22,8 +22,14 @@ namespace CodeBase.Turrets
             _cooldownTimer.Play();
         }
 
-        public void SetTarget(GameObject target) =>
+        public override void SetTarget(GameObject target)
+        {
             _target = target;
+            enabled = true;
+        }
+
+        public override void ResetTarget() =>
+            enabled = false;
 
         private bool CanAttack() =>
             _target != null && _cooldownTimer.IsDone && _cannon.CanAttack();
