@@ -15,14 +15,14 @@ namespace CodeBase.Turrets
         {
             _catapultAnimator.enabled = true;
             _observer.gameObject.SetActive(true);
-            _cooldownTimer.Start();
+            _cooldownTimer.Resume();
         }
 
         public void Deactivate()
         {
             _catapultAnimator.enabled = false;
             _observer.gameObject.SetActive(false);
-            _cooldownTimer.Stop();
+            _cooldownTimer.Pause();
             _targetHandler.ResetTarget();
         }
     }

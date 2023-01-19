@@ -45,10 +45,10 @@ namespace CodeBase.Common
             IsDone = false;
         }
 
-        public void Stop() =>
+        public void Pause() =>
             IsPlaying = false;
 
-        public void Start() =>
+        public void Resume() =>
             IsPlaying = true;
     }
 }

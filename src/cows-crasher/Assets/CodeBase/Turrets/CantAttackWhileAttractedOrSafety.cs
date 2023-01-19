@@ -20,7 +20,7 @@ namespace CodeBase.Turrets
             {
                 case true when _ufoAttracted.IsAttracting || !_body.enabled:
                     _attackComponent.enabled = false;
-                    _cooldownTimer.Stop();
+                    _cooldownTimer.Pause();
                     break;
                 case false when !_ufoAttracted.IsAttracting && _body.enabled:
                     _attackComponent.enabled = true;
