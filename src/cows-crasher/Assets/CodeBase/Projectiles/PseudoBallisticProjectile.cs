@@ -1,3 +1,4 @@
+using CodeBase.Common;
 using UnityEngine;
 
 namespace CodeBase.Projectiles
@@ -6,13 +7,12 @@ namespace CodeBase.Projectiles
     {
         [SerializeField] private float _speed;
         [SerializeField] private AnimationCurve _height;
-        [SerializeField] private float _heightChangeTime;
         [SerializeField] private float _heightOffset;
+        [SerializeField] private Timer _climbTimer;
         
         private Vector3 _direction;
         private Vector3 _target;
         private float _startHeight;
-        private float _elapsed;
         
         public override void Construct(Vector3 target)
         {
@@ -21,6 +21,7 @@ namespace CodeBase.Projectiles
             _direction.y = 0;
             _direction.Normalize();
             _startHeight = transform.position.y;
+            _climbTimer.Play();
         }
 
         private void Update()
@@ -28,10 +29,9 @@ namespace CodeBase.Projectiles
             var timeStep = Time.deltaTime * _speed;
             var desiredPosition = transform.position + _direction * timeStep;
             
-            _elapsed += Time.deltaTime / _heightChangeTime;
-            if (_elapsed < 1f)
+            if (_climbTimer.IsPlaying)
             {
-                desiredPosition.y = CalculateHeight(_elapsed);
+                desiredPosition.y = CalculateHeight(_climbTimer.Progress);
                 transform.rotation = Quaternion.LookRotation((desiredPosition - transform.position).normalized);
             }
             else
