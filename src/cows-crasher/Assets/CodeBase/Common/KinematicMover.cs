@@ -1,5 +1,4 @@
 using System;
-using CodeBase.AI.Components;
 using CodeBase.LevelManagement;
 using UnityEngine;
 

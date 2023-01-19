@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using CodeBase.AI.Components;
-using CodeBase.AI.Cow;
 using CodeBase.Audio;
 using UnityEngine;
 using Random = UnityEngine.Random;

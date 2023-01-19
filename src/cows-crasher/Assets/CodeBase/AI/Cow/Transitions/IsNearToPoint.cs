@@ -1,5 +1,4 @@
 using CodeBase.AI.Cow.Transitions.Abstract;
-using CodeBase.Turrets;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow.Transitions

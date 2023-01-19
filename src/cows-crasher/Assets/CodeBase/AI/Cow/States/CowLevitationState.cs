@@ -1,5 +1,4 @@
 using CodeBase.AI.Cow.States.Abstract;
-using CodeBase.AI.Cow.Transitions.Abstract;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow.States

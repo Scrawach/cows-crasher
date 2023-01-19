@@ -1,6 +1,6 @@
 ﻿using System;
 using CodeBase.Audio;
-using CodeBase.Projectiles;
+using CodeBase.Projectiles.Abstract;
 using UnityEngine;
 
 namespace CodeBase.Turrets

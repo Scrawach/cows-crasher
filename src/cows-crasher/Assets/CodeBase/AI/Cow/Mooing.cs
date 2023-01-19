@@ -1,9 +1,7 @@
-using System;
 using CodeBase.AI.Components;
 using CodeBase.Audio;
 using CodeBase.Common;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace CodeBase.AI.Cow
 {

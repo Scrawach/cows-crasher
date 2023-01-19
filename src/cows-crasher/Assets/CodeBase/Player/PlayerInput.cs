@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CodeBase.Player
 {
@@ -8,12 +7,12 @@ namespace CodeBase.Player
         private const string HorizontalAxis = "Horizontal";
         private const string VerticalAxis = "Vertical";
 
+        public bool IsBlocked;
+        
         private Camera _camera;
 
         private void Awake() =>
             _camera = Camera.main;
-
-        public bool IsBlocked;
 
         public Vector3 Axis
         {

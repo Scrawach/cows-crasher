@@ -1,6 +1,5 @@
 using CodeBase.CameraLogic;
 using CodeBase.Player;
-using CodeBase.Ufo;
 using CodeBase.UI;
 using UnityEngine;
 

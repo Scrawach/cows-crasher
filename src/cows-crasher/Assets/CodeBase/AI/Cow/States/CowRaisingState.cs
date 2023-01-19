@@ -1,4 +1,3 @@
-using CodeBase.AI.Components;
 using CodeBase.AI.Cow.States.Abstract;
 using CodeBase.Common;
 using UnityEngine;

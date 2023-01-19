@@ -1,5 +1,4 @@
-﻿using CodeBase.AI.Components;
-using CodeBase.Common;
+﻿using CodeBase.Common;
 using UnityEngine;
 
 namespace CodeBase.Turrets

@@ -1,4 +1,5 @@
 using CodeBase.Common;
+using CodeBase.Projectiles.Abstract;
 using UnityEngine;
 
 namespace CodeBase.Projectiles
