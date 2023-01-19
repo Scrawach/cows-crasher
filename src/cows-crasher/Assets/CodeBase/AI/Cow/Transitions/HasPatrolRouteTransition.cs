@@ -1,5 +1,6 @@
 using CodeBase.AI.Components;
 using CodeBase.AI.Cow.Transitions.Abstract;
+using CodeBase.Common;
 using UnityEngine;
 
 namespace CodeBase.AI.Cow.Transitions

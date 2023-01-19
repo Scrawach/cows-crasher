@@ -1,8 +1,7 @@
-﻿using CodeBase.Audio;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using UnityEngine;
 
-namespace CodeBase.AI.Components
+namespace CodeBase.Audio
 {
     public class PlaySteps : MonoBehaviour
     {

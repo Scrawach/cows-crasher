@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.AI.Components
+namespace CodeBase.Common
 {
     public class Timer : MonoBehaviour
     {
