@@ -18,6 +18,7 @@ namespace CodeBase.UI
             if (IsFadingNow()) 
                 StopFading();
 
+            _curtain.alpha = 0;
             _fading = StartCoroutine(Fading(1, onDone));
         }
 
@@ -25,7 +26,8 @@ namespace CodeBase.UI
         {
             if (IsFadingNow())
                 StopFading();
-            
+
+            _curtain.alpha = 1;
             _fading = StartCoroutine(Fading(0, onDone));
         }
 

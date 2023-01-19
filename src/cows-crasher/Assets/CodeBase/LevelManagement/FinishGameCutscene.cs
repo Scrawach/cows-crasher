@@ -8,6 +8,7 @@ namespace CodeBase.LevelManagement
     {
         [SerializeField] private GameObject _alien;
         [SerializeField] private GameObject _cow;
+        [SerializeField] private GameObject _congrats;
         [SerializeField] private Storyteller _defenceStory;
         [SerializeField] private Storyteller _cowStory;
         [SerializeField] private AudioSource _mooSfx;
@@ -37,6 +38,7 @@ namespace CodeBase.LevelManagement
         {
             _onEnded?.Invoke();
             _movementCutscene.Play();
+            _congrats.SetActive(true);
         }
     }
 }
