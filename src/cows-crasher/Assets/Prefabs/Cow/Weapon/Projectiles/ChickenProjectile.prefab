@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 25
-  _height:
+  _heightOffset: 1.2
+  _climbCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
@@ -72,8 +73,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _heightOffset: 1.2
-  _climbTimer: {fileID: 0}
+  _climbTimer: {fileID: 5503878918270023426}
 --- !u!114 &1728627383628575434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 0
   Target: 0.65
 --- !u!1 &4781129732235727910
 GameObject:
@@ -360,7 +361,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6507137130787033003}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.35

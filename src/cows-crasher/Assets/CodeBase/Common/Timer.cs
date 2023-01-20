@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 
 namespace CodeBase.Common
 {
     public class Timer : MonoBehaviour
     {
-        public float Target;
+        [SerializeField] private bool _playOnAwake;
         
+        public float Target;
+
         public float Elapsed { get; private set; }
         
         public bool IsPlaying { get; private set; }
@@ -13,6 +16,12 @@ namespace CodeBase.Common
         public bool IsDone { get; private set; }
 
         public float Progress => Elapsed / Target;
+
+        private void Awake()
+        {
+            if (_playOnAwake)
+                Play();
+        }
 
         private void Update()
         {
