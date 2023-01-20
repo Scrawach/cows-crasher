@@ -7,12 +7,25 @@ namespace CodeBase.UI.SimpleLocalization
     {
         [SerializeField] private Toggle _russianToggle;
         [SerializeField] private Toggle _englishToggle;
-        
+
+        private void Start()
+        {
+            if (Localization.Current == Language.English)
+            {
+                _englishToggle.isOn = true;
+                OnEnglishToggleChanged(true);
+            }
+            else
+            {
+                _russianToggle.isOn = true;
+                OnRussianToggleChanged(true);
+            }
+        }
+
         private void OnEnable()
         {
             _russianToggle.onValueChanged.AddListener(OnRussianToggleChanged);
             _englishToggle.onValueChanged.AddListener(OnEnglishToggleChanged);
-            Localization.Current = _russianToggle.isOn ? Language.Russian : Language.English;
         }
         
         private void OnDisable()
@@ -21,16 +34,14 @@ namespace CodeBase.UI.SimpleLocalization
             _englishToggle.onValueChanged.RemoveListener(OnEnglishToggleChanged);
         }
 
-        private void OnRussianToggleChanged(bool value)
+        private static void OnRussianToggleChanged(bool isOn)
         {
-            if (value)
-                Localization.Current = Language.Russian;
+            if (isOn) Localization.Current = Language.Russian;
         }
 
-        private void OnEnglishToggleChanged(bool value)
+        private static void OnEnglishToggleChanged(bool isOn)
         {
-            if (value)
-                Localization.Current = Language.English;
+            if (isOn) Localization.Current = Language.English;
         }
     }
 }
