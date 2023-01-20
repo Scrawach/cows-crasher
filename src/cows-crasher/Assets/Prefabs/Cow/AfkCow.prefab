@@ -4869,6 +4869,7 @@ GameObject:
   - component: {fileID: 2532394251903748790}
   - component: {fileID: 8770647397522231376}
   - component: {fileID: 622612915766603255}
+  - component: {fileID: 1519108992603295436}
   m_Layer: 0
   m_Name: AfkCow
   m_TagString: Untagged
@@ -5031,6 +5032,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Enemy>k__BackingField: {fileID: 5184877591155187440, guid: 9520b5d1d929e544a9c6f6417b76a32d,
     type: 3}
+--- !u!114 &1519108992603295436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163871993299718231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73a4515a2fe4cb89f8ca69eecd180ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 5163871993299718234}
+  _bounds: {fileID: 0}
 --- !u!1 &5163871993385067171
 GameObject:
   m_ObjectHideFlags: 0

@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 3738385605519629215}
   - component: {fileID: 583631976586920017}
   - component: {fileID: 8318157349200042905}
+  - component: {fileID: 7670673835082625644}
   m_Layer: 0
   m_Name: Cow Operator
   m_TagString: Untagged
@@ -452,6 +453,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 3643177323710409571}
+--- !u!114 &7670673835082625644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643177323710409498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73a4515a2fe4cb89f8ca69eecd180ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 3643177323710409502}
+  _bounds: {fileID: 0}
 --- !u!1 &3643177323742585616
 GameObject:
   m_ObjectHideFlags: 0
