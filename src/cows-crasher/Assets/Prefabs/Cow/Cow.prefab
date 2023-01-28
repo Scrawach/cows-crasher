@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 1
   Target: 3
 --- !u!1 &1103468710174713905
 GameObject:
@@ -290,6 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 0
   Target: 5
 --- !u!1 &1630375128000434968
 GameObject:
@@ -680,7 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a63ff40e937748ca8efec56dc603ea7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Enemy>k__BackingField: {fileID: 0}
+  _enemyObserver: {fileID: 4762535786737399715}
 --- !u!114 &8286132507848824523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 0
   Target: 0.5
 --- !u!1 &7245479330134237262
 GameObject:
@@ -1036,6 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 0
   Target: 2
 --- !u!1 &7245479330252968156
 GameObject:
@@ -1598,6 +1602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6991531bc170473ca2709d4f210e825c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playOnAwake: 0
   Target: 2
 --- !u!1 &7424120819754245045
 GameObject:

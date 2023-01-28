@@ -4,11 +4,20 @@ namespace CodeBase.AI.Components
 {
     public class EnemyFeeling : MonoBehaviour
     {
-        [field: SerializeField] public Transform Enemy { get; private set; }
+        [SerializeField] private Observer _enemyObserver;
+        
+        public Transform Enemy { get; private set; }
 
-        public bool FeelEnemy()
-        {
-            return true;
-        }
+        private void OnEnable() => 
+            _enemyObserver.Entered += OnFindEnemy;
+
+        private void OnDisable() => 
+            _enemyObserver.Entered -= OnFindEnemy;
+
+        public bool FeelEnemy() => 
+            Enemy != null;
+
+        private void OnFindEnemy(GameObject enemy) => 
+            Enemy = enemy.transform;
     }
 }
