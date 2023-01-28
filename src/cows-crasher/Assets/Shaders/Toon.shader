@@ -70,6 +70,8 @@
             float4 frag (v2f i) : SV_Target
             {
                 const float4 light = _LightColor * _Strength;
+                // in WebGL build in this version _WorldSPaceLightPos0 return zero vector,
+                // i dont know why, and used this const for imitate light angle from scene
                 const float3 fastFixForWebGL = float3(0.3, 0.9, -0.2);
                 float4 col = tex2D(_MainTex, i.uv) * _Color;
                
